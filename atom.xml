@@ -3,11 +3,11 @@
   <title>sonders</title>
   
   <subtitle>sonders的个人博客</subtitle>
-  <link href="https://sonders.com/atom.xml" rel="self"/>
+  <link href="https://sonderss.github.io/atom.xml" rel="self"/>
   
-  <link href="https://sonders.com/"/>
+  <link href="https://sonderss.github.io/"/>
   <updated>2022-08-09T08:34:09.755Z</updated>
-  <id>https://sonders.com/</id>
+  <id>https://sonderss.github.io/</id>
   
   <author>
     <name>sonders</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="https://sonders.com/2018/10/11/hello-world/"/>
-    <id>https://sonders.com/2018/10/11/hello-world/</id>
+    <link href="https://sonderss.github.io/2018/10/11/hello-world/"/>
+    <id>https://sonderss.github.io/2018/10/11/hello-world/</id>
     <published>2018-10-11T03:11:11.000Z</published>
     <updated>2022-08-09T08:34:09.755Z</updated>
     
@@ -34,7 +34,7 @@
     
     
     
-    <category term="测试文字" scheme="https://sonders.com/tags/%E6%B5%8B%E8%AF%95%E6%96%87%E5%AD%97/"/>
+    <category term="测试文字" scheme="https://sonderss.github.io/tags/%E6%B5%8B%E8%AF%95%E6%96%87%E5%AD%97/"/>
     
   </entry>
   
