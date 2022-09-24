@@ -336,27 +336,27 @@
      -->
 
     <div class="article-content markdown-body">
-      <h4 id="客服消息"><a href="#客服消息" class="headerlink" title="客服消息"></a>客服消息</h4><p>最近想在小程序中实现收款的功能，但是个人小程序不能开发支付类，所以想通过收款码来实现，最开始是想给一个图片然后引导长按识别就完事了，结果小程序中不能识别二维码…那就不做了吗，不，为了赚点钱(no way)绞尽脑汁，于是想着从客服消息那里，发送收款码，这样就可以识别了。<br /></p>
+      <h4 id="客服消息"><a class="markdownIt-Anchor" href="#客服消息"></a> 客服消息</h4>
+<p>最近想在小程序中实现收款的功能，但是个人小程序不能开发支付类，所以想通过收款码来实现，最开始是想给一个图片然后引导长按识别就完事了，结果小程序中不能识别二维码…那就不做了吗，不，为了赚点钱(no way)绞尽脑汁，于是想着从客服消息那里，发送收款码，这样就可以识别了。<br /></p>
 <p>第一步：开发者工具 -》 云开发 -》 设置 -》  全局设置 - 添加消息推送配置。消息类型对应收包的 MsgType，事件类型对应收包的 Event。</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="https://i.loli.net/2020/07/22/kdsbcO7Ua5oVzPn.png"
-                      alt="F2E81327-EAE3-46ff-8321-8304809B7EF6.png"
+                      alt="F2E81327-EAE3-46ff-8321-8304809B7EF6.png" 
                 ></p>
 <p>第二步：云函数中处理消息</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="https://i.loli.net/2020/07/22/OpARGLzFWjtoS5H.png"
-                      alt="ddddBC.png"
+                      alt="ddddBC.png" 
                 ></p>
 <p>云函数中config.json的配置</p>
 <blockquote>
 <p>需在 config.json 中配置 customerServiceMessage.uploadTempMedia API 的权限，<a class="link"   target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/guide/openapi/openapi.html#%E4%BA%91%E8%B0%83%E7%94%A8" >详情<i class="fas fa-external-link-alt"></i></a></p>
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  &quot;permissions&quot;: &#123;</span><br><span class="line">    &quot;openapi&quot;: [</span><br><span class="line">      &quot;customerServiceMessage.uploadTempMedia&quot;, </span><br><span class="line">      &quot;customerServiceMessage.send&quot;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p><strong>最终效果</strong></p>
 <img  
                      lazyload
@@ -370,22 +370,20 @@
                      data-src="https://i.loli.net/2020/07/22/POzf1wSTKv5RuDm.jpg"
                        style="width:220px;height:400px"
                 >
-
-
 <br />
 <br />
 <br /><br />
-
-
-<p>注意:<br>以上这种方法，的确实现了在特定入口进入会话页时，客服主动发送收款码的需求，但是！！！ 这种实现是有前提的，那就是需要客户主动与小程序产生了交互，小程序才有5次发送消息的次数，假设次数用完，小程序是发送不了信息的。另外如果用户在48小时内再次产生交互，那么又会获得5次机会，但不叠加。 于是，我笑了。<br>这里是<a class="link"   target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/introduction/custom.html#%E4%B8%8B%E5%8F%91%E6%9D%A1%E4%BB%B6%E8%AF%B4%E6%98%8E" >文档<i class="fas fa-external-link-alt"></i></a></p>
+<p>注意:<br />
+以上这种方法，的确实现了在特定入口进入会话页时，客服主动发送收款码的需求，但是！！！ 这种实现是有前提的，那就是需要客户主动与小程序产生了交互，小程序才有5次发送消息的次数，假设次数用完，小程序是发送不了信息的。另外如果用户在48小时内再次产生交互，那么又会获得5次机会，但不叠加。 于是，我笑了。<br />
+这里是<a class="link"   target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/introduction/custom.html#%E4%B8%8B%E5%8F%91%E6%9D%A1%E4%BB%B6%E8%AF%B4%E6%98%8E" >文档<i class="fas fa-external-link-alt"></i></a></p>
 <p>于是，我开始思考人生的意义，人生是不是永无止境的轮回，时间在哪里停止，又在哪里结…</p>
 <p>想了半天，还是老老实实做引导页吧，所谓引导页就是引导着用户往火坑里，哦不，往美好的圈里跳…</p>
-<p>代码部分 </p>
+<p>代码部分</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="https://i.loli.net/2020/07/23/Q79X1PdkvTzyCsW.png"
-                      alt="1233123213DCA6-4ccf-9143-0771D0417FAF.png"
+                      alt="1233123213DCA6-4ccf-9143-0771D0417FAF.png" 
                 ></p>
 <p>到这里就实现了，用户发送“打赏”，返回打赏码的功能，但是怎么让用户知道发送打赏呢，于是不会PS的我，硬生生做了几个图出来…生活太苦了。</p>
 <img  style="width:220px;height:400px" 
@@ -403,13 +401,9 @@
 <br />
 <br /><br />
 于是我用这些图做了一个引导页，每次点击下一页的时候，动态切换背景图，就简单实现了一个引导页功能吧，真是脑洞大开，看到这里的朋友，有兴趣可以微信搜索，长安酒馆，在小程序里打赏点吧。
-
-
-
 <br />
 <br /><br />
-
-<p> <strong>给钱！</strong></p>
+<p><strong>给钱！</strong></p>
 
     </div>
 
@@ -689,7 +683,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%A2%E6%9C%8D%E6%B6%88%E6%81%AF"><span class="nav-number">1.</span> <span class="nav-text">客服消息</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%A2%E6%9C%8D%E6%B6%88%E6%81%AF"><span class="nav-number">1.</span> <span class="nav-text"> 客服消息</span></a></li></ol>
     </div>
 </div>
         </aside>

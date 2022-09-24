@@ -238,7 +238,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>272 字</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>273 字</span>
         </span>
     
     
@@ -307,7 +307,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>272 字</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>273 字</span>
         </span>
     
     
@@ -331,11 +331,11 @@
       <blockquote>
 <p>当我把项目部署到刚买的良心云服务器之后，发觉项目中的一个第三方接口出现了跨域问题，于是将该接口放到服务器端调用，以此解决跨域问题</p>
 </blockquote>
-<h4 id="HttpModule"><a href="#HttpModule" class="headerlink" title="HttpModule"></a>HttpModule</h4><p>引入HttpModule模块，具体如下</p>
+<h4 id="httpmodule"><a class="markdownIt-Anchor" href="#httpmodule"></a> HttpModule</h4>
+<p>引入HttpModule模块，具体如下</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import &#123; HttpModule &#125; from &#x27;@nestjs/common&#x27;;</span><br><span class="line">@Module(&#123;</span><br><span class="line">  imports: [HttpModule]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>在service模块引入将要使用的HttpService  </p>
+<p>在service模块引入将要使用的HttpService</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Injectable,HttpService &#125; from &#x27;@nestjs/common&#x27;;</span><br><span class="line">// 在构造器中声明属性</span><br><span class="line">constructor(private readonly httpService: HttpService) &#123;&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">async getData (): Promise&lt;any&gt; &#123;</span><br><span class="line">     const response = await this.httpService.get(&#x27;https://xx.xx/xx&#x27;).toPromise(); </span><br><span class="line">     return response.data;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>OK，到此就完成了在服务器端调用三方接口的需求，其实现在看也不是很难，只是在刚开始的时候，走了一点弯路，不过最终还是解决了该问题。</p>
 <blockquote>
 <p>跨域是由<b>同源策略</b>引起的，这是浏览器的安全机制。当一个请求url的协议、域名、端口三者之间任意一个与当前页面url不同，就会跨域。(一般情况下，跨域皆由服务器端处理)</p>
@@ -615,7 +615,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#HttpModule"><span class="nav-number">1.</span> <span class="nav-text">HttpModule</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#httpmodule"><span class="nav-number">1.</span> <span class="nav-text"> HttpModule</span></a></li></ol>
     </div>
 </div>
         </aside>

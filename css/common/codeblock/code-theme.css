@@ -14,7 +14,7 @@
   --scrollbar-color: #595967;
   --scroll-bar-bg-color: #e6e6e6;
   --link-color: #484853;
-  --copyright-info-color: #c03;
+  --copyright-info-color: #87ceeb;
   --avatar-background-color: #06c;
   --pjax-progress-bar-color: linear-gradient(45deg, #f10006, #ef5b00, #e59c01, #19ca05, #00cab5, #0264c8, #c303c3);
 }
@@ -35,7 +35,7 @@
     --scrollbar-color: #595967;
     --scroll-bar-bg-color: #e6e6e6;
     --link-color: #484853;
-    --copyright-info-color: #c03;
+    --copyright-info-color: #87ceeb;
     --avatar-background-color: #06c;
     --pjax-progress-bar-color: linear-gradient(45deg, #f10006, #ef5b00, #e59c01, #19ca05, #00cab5, #0264c8, #c303c3);
   }
@@ -57,7 +57,7 @@
     --scrollbar-color: #32333a;
     --scroll-bar-bg-color: #5c5e6a;
     --link-color: #c5c5cc;
-    --copyright-info-color: #a30029;
+    --copyright-info-color: #87ceeb;
     --avatar-background-color: #005cb8;
     --pjax-progress-bar-color: linear-gradient(45deg, #ea404a, #ea722f, #e9a71f, #67e559, #18ecec, #1b85f1, #ee1dee);
   }
@@ -78,7 +78,7 @@
   --scrollbar-color: #595967;
   --scroll-bar-bg-color: #e6e6e6;
   --link-color: #484853;
-  --copyright-info-color: #c03;
+  --copyright-info-color: #87ceeb;
   --avatar-background-color: #06c;
   --pjax-progress-bar-color: linear-gradient(45deg, #f10006, #ef5b00, #e59c01, #19ca05, #00cab5, #0264c8, #c303c3);
 }
@@ -98,7 +98,7 @@
   --scrollbar-color: #32333a;
   --scroll-bar-bg-color: #5c5e6a;
   --link-color: #c5c5cc;
-  --copyright-info-color: #a30029;
+  --copyright-info-color: #87ceeb;
   --avatar-background-color: #005cb8;
   --pjax-progress-bar-color: linear-gradient(45deg, #ea404a, #ea722f, #e9a71f, #67e559, #18ecec, #1b85f1, #ee1dee);
 }

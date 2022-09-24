@@ -328,7 +328,8 @@
      -->
 
     <div class="article-content markdown-body">
-      <p>使用scss的一些技巧学习<br /><br>官网地址：<a class="link"   target="_blank" rel="noopener" href="https://www.sass.hk/" >https://www.sass.hk/<i class="fas fa-external-link-alt"></i></a></p>
+      <p>使用scss的一些技巧学习<br /><br />
+官网地址：<a class="link"   target="_blank" rel="noopener" href="https://www.sass.hk/" >https://www.sass.hk/<i class="fas fa-external-link-alt"></i></a></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// ====== 字体大小 ======</span><br><span class="line">@for $i from 12 through 30 &#123;</span><br><span class="line">    .f#&#123;$i&#125; &#123;</span><br><span class="line">        font-size: #&#123;$i&#125;px;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">// ====== 处理状态样式 ======</span><br><span class="line">// 注意这里的key和value不要带引号</span><br><span class="line">$map: (color_2: #ff9b00, color_3: #e60e0e);</span><br><span class="line">@each $key,$value in $map &#123;</span><br><span class="line">    .#&#123;$key&#125; &#123;</span><br><span class="line">        color: $value;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     </div>
 

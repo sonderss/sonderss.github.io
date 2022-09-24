@@ -228,11 +228,11 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/GO/">GO</a>&nbsp;
+                        <a href="/tags/%E6%9C%AC%E5%9C%B0%E6%B5%8B%E8%AF%95/">本地测试</a>&nbsp;
                     </li>
                 
                     <li>
-                        | <a href="/tags/%E6%9C%AC%E5%9C%B0%E6%B5%8B%E8%AF%95/">本地测试</a>&nbsp;
+                        | <a href="/tags/GO/">GO</a>&nbsp;
                     </li>
                 
             </ul>
@@ -242,7 +242,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>324 字</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>322 字</span>
         </span>
     
     
@@ -301,11 +301,11 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/GO/">GO</a>&nbsp;
+                        <a href="/tags/%E6%9C%AC%E5%9C%B0%E6%B5%8B%E8%AF%95/">本地测试</a>&nbsp;
                     </li>
                 
                     <li>
-                        | <a href="/tags/%E6%9C%AC%E5%9C%B0%E6%B5%8B%E8%AF%95/">本地测试</a>&nbsp;
+                        | <a href="/tags/GO/">GO</a>&nbsp;
                     </li>
                 
             </ul>
@@ -315,7 +315,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>324 字</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>322 字</span>
         </span>
     
     
@@ -340,32 +340,32 @@
                      lazyload
                      src="/images/loading.svg"
                      data-src="https://i.loli.net/2020/07/10/43MJlz1RLsCTqoP.png"
-                      alt="image"
-                ><br>安装go </p>
+                      alt="image" 
+                ><br />
+安装go</p>
 <p><a class="link"   target="_blank" rel="noopener" href="https://golang.google.cn/doc/install?download=go1.14.4.windows-amd64.msi" >https://golang.google.cn/doc/install?download=go1.14.4.windows-amd64.msi<i class="fas fa-external-link-alt"></i></a></p>
-<p>新建一个工作区 GOPATH: </p>
+<p>新建一个工作区 GOPATH:</p>
 <p>新建文件夹GO_ -》 创建 src bin pkg 三个文件夹</p>
 <p>配置GOPATH：</p>
-<p>系统变量 -》 新建 -》 变量名 GOPATH -》 变量值 （GO_ 文件夹所在的路径） </p>
+<p>系统变量 -》 新建 -》 变量名 GOPATH -》 变量值 （GO_ 文件夹所在的路径）</p>
 <p>path -》 将安装地址添加进去  如：D:\GO\bin （安装时自动添加）</p>
-<p>用户变量 -》 path %USERPROFILE%\go\bin （安装时自动添加） </p>
+<p>用户变量 -》 path %USERPROFILE%\go\bin （安装时自动添加）</p>
 <p>配置代理 <a class="link"   target="_blank" rel="noopener" href="https://goproxy.io/zh/" >https://goproxy.io/zh/<i class="fas fa-external-link-alt"></i></a></p>
-<p>终端执行 </p>
+<p>终端执行</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">go env -w GO111MODULE=on</span><br><span class="line">go env -w GOPROXY=https://goproxy.io,direct</span><br></pre></td></tr></table></figure>
-
-<p>在GOPATH的src文件夹下新建 golang.org 及子文件夹 x 执行<br><br /></p>
-<p> <code>git clone https://github.com/golang/tools.git tools</code></p>
-<p>打开vscode 执行  <strong>ctrl + shift + p</strong>  <br /> </p>
-<p>搜索<strong>Go:install&#x2F;Update Tools</strong>  <br /> </p>
+<p>在GOPATH的src文件夹下新建 <a class="link"   target="_blank" rel="noopener" href="http://golang.org" >golang.org<i class="fas fa-external-link-alt"></i></a> 及子文件夹 x 执行<br />
+<br /></p>
+<p><code>git clone https://github.com/golang/tools.git tools</code></p>
+<p>打开vscode 执行  <strong>ctrl + shift + p</strong>  <br /></p>
+<p>搜索<strong>Go:install/Update Tools</strong>  <br /></p>
 <p>全选 -》 <strong>确定</strong></p>
 <p>如果一切正常，则开始下载安装了。</p>
 <p>如果不正常，则重新试一下，说不定会出现   SUCCEEDED<br /></p>
 <p>如果一直失败，先不要慌，可以这样来做：<br /></p>
 <p>根据失败提示，找到下载的git地址，这里以gocode为例<br /></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone  https://github.com/mdempsky/gocode.git  gocode</span><br></pre></td></tr></table></figure>
-
-<p>在GOPATH下src对应的目录里执行上面的git  clone指令，如果没有这个文件夹就创建（github.com -》mdempsky ）<br /></p>
-<p>回到vscode里，在GOPATH打开终端 <text style='color:green'>ctrl + &#96;</text>  ，执行 <br /></p>
+<p>在GOPATH下src对应的目录里执行上面的git  clone指令，如果没有这个文件夹就创建（<a class="link"   target="_blank" rel="noopener" href="http://github.com" >github.com<i class="fas fa-external-link-alt"></i></a> -》mdempsky ）<br /></p>
+<p>回到vscode里，在GOPATH打开终端 <text style='color:green'>ctrl + `</text>  ，执行 <br /></p>
 <p><code>go get -v  github.com/mdempsky/gocode</code></p>
 <p>这个时候，你的bin目录里就会有<strong>gocode.exe</strong>了</p>
 <p>其他的同理，既可。<br /></p>
@@ -397,11 +397,11 @@
     <ul class="post-tags-box">
       
       <li class="tag-item">
-        <a href="/tags/GO/">#GO</a>&nbsp;
+        <a href="/tags/%E6%9C%AC%E5%9C%B0%E6%B5%8B%E8%AF%95/">#本地测试</a>&nbsp;
       </li>
       
       <li class="tag-item">
-        <a href="/tags/%E6%9C%AC%E5%9C%B0%E6%B5%8B%E8%AF%95/">#本地测试</a>&nbsp;
+        <a href="/tags/GO/">#GO</a>&nbsp;
       </li>
       
     </ul>

@@ -336,14 +336,14 @@
      -->
 
     <div class="article-content markdown-body">
-      <h3 id="检测违规图片"><a href="#检测违规图片" class="headerlink" title="检测违规图片"></a>检测违规图片</h3><blockquote>
+      <h3 id="检测违规图片"><a class="markdownIt-Anchor" href="#检测违规图片"></a> 检测违规图片</h3>
+<blockquote>
 <p>在小程序里做了一个图床，结果在审核时提醒说图片没有经过内容审核，会导致小程序的滥用，于是开始做图片的内容审核，也就是黄色，政治这些敏感信息的自动过滤</p>
 </blockquote>
 <p>踩了一些坑，记录一下</p>
 <p>文档 <a class="link"   target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/sec-check/security.imgSecCheck.html" >https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/sec-check/security.imgSecCheck.html<i class="fas fa-external-link-alt"></i></a> <br /></p>
 <p>注意： 我是在云函数里调用该API</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取buffer res.path为上传图片的路径</span></span><br><span class="line"><span class="keyword">let</span> buffer = wx.<span class="title function_">getFileSystemManager</span>().<span class="title function_">readFileSync</span>(res.<span class="property">path</span>)</span><br><span class="line"><span class="comment">// 调用云函数判断图片内容是否涉黄 违规</span></span><br><span class="line">wx.<span class="property">cloud</span>.<span class="title function_">callFunction</span>(&#123;</span><br><span class="line">    <span class="attr">name</span>:<span class="string">&#x27;checkImages&#x27;</span>,</span><br><span class="line">    <span class="attr">data</span>:&#123;<span class="attr">imageUrl</span>:buffer,<span class="attr">type</span>:res.<span class="property">type</span>&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 云函数入口</span></span><br><span class="line"><span class="built_in">exports</span>.<span class="property">main</span> = <span class="keyword">async</span> (event, context) =&gt; &#123;</span><br><span class="line"> <span class="comment">// 调用cloud.openapi.security.imgSecCheck </span></span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">await</span>  cloud.<span class="property">openapi</span>.<span class="property">security</span>.<span class="title function_">imgSecCheck</span>(&#123;</span><br><span class="line">      <span class="attr">media</span>: &#123;</span><br><span class="line">        <span class="attr">contentType</span>: <span class="string">`image/<span class="subst">$&#123;event.type&#125;</span>`</span>,</span><br><span class="line">        <span class="attr">value</span>:  <span class="title class_">Buffer</span>.<span class="title function_">from</span>(event.<span class="property">imageUrl</span>)  <span class="comment">// 这里传一个buffer </span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     </div>
 
@@ -623,7 +623,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A3%80%E6%B5%8B%E8%BF%9D%E8%A7%84%E5%9B%BE%E7%89%87"><span class="nav-number">1.</span> <span class="nav-text">检测违规图片</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A3%80%E6%B5%8B%E8%BF%9D%E8%A7%84%E5%9B%BE%E7%89%87"><span class="nav-number">1.</span> <span class="nav-text"> 检测违规图片</span></a></li></ol>
     </div>
 </div>
         </aside>

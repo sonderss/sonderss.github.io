@@ -238,7 +238,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>131 字</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>133 字</span>
         </span>
     
     
@@ -307,7 +307,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>131 字</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>133 字</span>
         </span>
     
     
@@ -328,10 +328,10 @@
      -->
 
     <div class="article-content markdown-body">
-      <h3 id="react条件渲染"><a href="#react条件渲染" class="headerlink" title="react条件渲染"></a>react条件渲染</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">state=&#123;</span><br><span class="line">    id:1</span><br><span class="line">&#125;</span><br><span class="line">//以下是render</span><br><span class="line">&#123;</span><br><span class="line">    </span><br><span class="line">    return (</span><br><span class="line">    this.state.id === 1 ? </span><br><span class="line">    &lt;div&gt;</span><br><span class="line">       渲染条件为1的dom</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    :</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      渲染条件不为1的dom</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<h2 id="img图片路径问题"><a href="#img图片路径问题" class="headerlink" title="img图片路径问题"></a>img图片路径问题</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//img的src需要require(&#x27;路径&#x27;)</span><br><span class="line">//backgroundImage需要字符串拼接</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;img src=&#123;require(&#x27;../accets/i.jpg&#x27;)&#125; /&gt;</span><br><span class="line"></span><br><span class="line">//注意如果是json返回的cdn地址直接写即可,例如</span><br><span class="line">&lt;img src=&#123;item.imgUrl&#125; /&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;div style=&#123;&#123;backgroundImage:&#x27;url(&#x27;+require(&#x27;../accets/1/jpg&#x27;) +&#x27;)&#x27;&#125;&#125;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+      <h3 id="react条件渲染"><a class="markdownIt-Anchor" href="#react条件渲染"></a> react条件渲染</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">state=&#123;</span><br><span class="line">    id:1</span><br><span class="line">&#125;</span><br><span class="line">//以下是render</span><br><span class="line">&#123;</span><br><span class="line">    </span><br><span class="line">    return (</span><br><span class="line">    this.state.id === 1 ? </span><br><span class="line">    &lt;div&gt;</span><br><span class="line">       渲染条件为1的dom</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    :</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      渲染条件不为1的dom</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="img图片路径问题"><a class="markdownIt-Anchor" href="#img图片路径问题"></a> img图片路径问题</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//img的src需要require(&#x27;路径&#x27;)</span><br><span class="line">//backgroundImage需要字符串拼接</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;img src=&#123;require(&#x27;../accets/i.jpg&#x27;)&#125; /&gt;</span><br><span class="line"></span><br><span class="line">//注意如果是json返回的cdn地址直接写即可,例如</span><br><span class="line">&lt;img src=&#123;item.imgUrl&#125; /&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;div style=&#123;&#123;backgroundImage:&#x27;url(&#x27;+require(&#x27;../accets/1/jpg&#x27;) +&#x27;)&#x27;&#125;&#125;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -606,7 +606,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#react%E6%9D%A1%E4%BB%B6%E6%B8%B2%E6%9F%93"><span class="nav-number">1.</span> <span class="nav-text">react条件渲染</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#img%E5%9B%BE%E7%89%87%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98"><span class="nav-number"></span> <span class="nav-text">img图片路径问题</span></a>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#react%E6%9D%A1%E4%BB%B6%E6%B8%B2%E6%9F%93"><span class="nav-number">1.</span> <span class="nav-text"> react条件渲染</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#img%E5%9B%BE%E7%89%87%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98"><span class="nav-number"></span> <span class="nav-text"> img图片路径问题</span></a>
     </div>
 </div>
         </aside>

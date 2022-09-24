@@ -328,83 +328,91 @@
      -->
 
     <div class="article-content markdown-body">
-      <h3 id="NestJS介绍"><a href="#NestJS介绍" class="headerlink" title="NestJS介绍"></a>NestJS介绍</h3><blockquote>
+      <h3 id="nestjs介绍"><a class="markdownIt-Anchor" href="#nestjs介绍"></a> NestJS介绍</h3>
+<blockquote>
 <p>Nest.js是一个渐进的Node.js框架。它的核心思想是提供了一个层与层直接的耦合度极小、抽象化极高的一个架构体系。</p>
 </blockquote>
 <ul>
-<li><p>为什么使用NestJS <br /><br>起初没打算使用Node来做，但得知了NestJS之后，忍不住想要试一试，于是就使用了NestJS。</p>
+<li>
+<p>为什么使用NestJS <br /><br />
+起初没打算使用Node来做，但得知了NestJS之后，忍不住想要试一试，于是就使用了NestJS。</p>
 </li>
-<li><p>NestJS中文网  <a class="link"   target="_blank" rel="noopener" href="https://www.itying.com/nestjs/" >https://www.itying.com/nestjs/<i class="fas fa-external-link-alt"></i></a> <br /></p>
+<li>
+<p>NestJS中文网  <a class="link"   target="_blank" rel="noopener" href="https://www.itying.com/nestjs/" >https://www.itying.com/nestjs/<i class="fas fa-external-link-alt"></i></a> <br /></p>
 </li>
-<li><p>在学习NestJS之前还需要了解TS相关 <a class="link"   target="_blank" rel="noopener" href="https://www.tslang.cn/docs/home.html" >https://www.tslang.cn/docs/home.html<i class="fas fa-external-link-alt"></i></a><br /></p>
+<li>
+<p>在学习NestJS之前还需要了解TS相关 <a class="link"   target="_blank" rel="noopener" href="https://www.tslang.cn/docs/home.html" >https://www.tslang.cn/docs/home.html<i class="fas fa-external-link-alt"></i></a><br /></p>
 </li>
-<li><p>NestJS使用体验<br /><br>NestJS就如介绍所说，耦合度低，层次分明，使用起来还挺好上手的。</p>
+<li>
+<p>NestJS使用体验<br /><br />
+NestJS就如介绍所说，耦合度低，层次分明，使用起来还挺好上手的。</p>
 </li>
-<li><p>安装（NodeJS环境）<br /><br>如果你不知道怎么安装Node可以看中文网 <a class="link"   target="_blank" rel="noopener" href="http://nodejs.cn/download/" >http://nodejs.cn/download/<i class="fas fa-external-link-alt"></i></a><br>下载对应的文件，然后安装即可。</p>
+<li>
+<p>安装（NodeJS环境）<br /><br />
+如果你不知道怎么安装Node可以看中文网 <a class="link"   target="_blank" rel="noopener" href="http://nodejs.cn/download/" >http://nodejs.cn/download/<i class="fas fa-external-link-alt"></i></a><br />
+下载对应的文件，然后安装即可。</p>
 </li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 检查版本</span></span><br><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
-
 <p>使用 Nest CLI 建立新项目非常简单</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">yarn <span class="variable language_">global</span> add @nestjs/cli</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建项目</span></span><br><span class="line">nest <span class="keyword">new</span> project-name </span><br><span class="line"></span><br><span class="line"><span class="comment">// 运行项目</span></span><br><span class="line">npm run <span class="attr">start</span>:dev</span><br></pre></td></tr></table></figure>
-
 <p>创建后的主要文件简介</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">app.<span class="property">controller</span>.<span class="property">ts</span>  <span class="comment">//带有单个路由的基本控制器示例</span></span><br><span class="line">app.<span class="property">module</span>.<span class="property">ts</span> <span class="comment">//应用程序的根模块</span></span><br><span class="line">main.<span class="property">ts</span>  <span class="comment">//应用程序入口文件</span></span><br></pre></td></tr></table></figure>
 <p>main.ts 入口文件，定义了请求端口，初始化的模块</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">NestFactory</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;@nestjs/core&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">AppModule</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;./app.module&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">bootstrap</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// 创建应用实例</span></span><br><span class="line">  <span class="keyword">const</span> app = <span class="keyword">await</span> <span class="title class_">NestFactory</span>.<span class="title function_">create</span>(<span class="title class_">AppModule</span>);</span><br><span class="line">  <span class="comment">// 处理跨域</span></span><br><span class="line">  app.<span class="title function_">enableCors</span>();</span><br><span class="line">  <span class="comment">// 服务端口</span></span><br><span class="line">  <span class="keyword">await</span> app.<span class="title function_">listen</span>(<span class="number">3001</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">bootstrap</span>();</span><br></pre></td></tr></table></figure>
-
-<h4 id="主要文件作用及含义"><a href="#主要文件作用及含义" class="headerlink" title="主要文件作用及含义"></a>主要文件作用及含义</h4><ul>
-<li><p>article.controller.ts</p>
+<h4 id="主要文件作用及含义"><a class="markdownIt-Anchor" href="#主要文件作用及含义"></a> 主要文件作用及含义</h4>
+<ul>
+<li>article.controller.ts</li>
+</ul>
 <blockquote>
 <p>提供接口，供客户端调用，这里仅提供接口，逻辑层在app.service.ts编写</p>
 </blockquote>
-</li>
-<li><p>article.service.ts</p>
+<ul>
+<li>article.service.ts</li>
+</ul>
 <blockquote>
 <p>业务逻辑层，主要与数据库交互，操作数据库</p>
 </blockquote>
-</li>
-<li><p>article.module.ts</p>
+<ul>
+<li>article.module.ts</li>
+</ul>
 <blockquote>
 <p>引入数据库表，注入依赖项(server)，控制器等</p>
 </blockquote>
-</li>
-<li><p>article.interface.ts</p>
+<ul>
+<li>article.interface.ts</li>
+</ul>
 <blockquote>
 <p>定义接口数据</p>
 </blockquote>
-</li>
-<li><p>dto&#x2F;create-post.dto.ts</p>
+<ul>
+<li>dto/create-post.dto.ts</li>
+</ul>
 <blockquote>
 <p>将定义数据会怎样发送到网络，名称首字母需要大写，否则存入不到数据库</p>
 </blockquote>
-</li>
-<li><p>schemas&#x2F;article.schema.ts</p>
+<ul>
+<li>schemas/article.schema.ts</li>
+</ul>
 <blockquote>
 <p>定义将存储在数据库中的数据类型 与客户端信息json一致</p>
 </blockquote>
-</li>
-</ul>
 <p>nest创建指令</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 模块</span></span><br><span class="line">nest g <span class="variable language_">module</span> article</span><br><span class="line"><span class="comment">// 控制器</span></span><br><span class="line">nest g controller article</span><br><span class="line"><span class="comment">// 服务</span></span><br><span class="line">nest g service news</span><br></pre></td></tr></table></figure>
-
-<h4 id="使用mongodb数据库"><a href="#使用mongodb数据库" class="headerlink" title="使用mongodb数据库"></a>使用mongodb数据库</h4><p>安装</p>
+<h4 id="使用mongodb数据库"><a class="markdownIt-Anchor" href="#使用mongodb数据库"></a> 使用mongodb数据库</h4>
+<p>安装</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install --save @nestjs/mongoose mongoose</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>在app.module.ts中连接数据库</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 这里记得mongodb服务是打开的</span></span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">MongooseModule</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;@nestjs/mongoose&#x27;</span>;</span><br><span class="line">@<span class="title class_">Module</span>(&#123;</span><br><span class="line">  <span class="comment">// blob本地数据库名</span></span><br><span class="line">  <span class="attr">imports</span>: [<span class="title class_">MongooseModule</span>.<span class="title function_">forRoot</span>(<span class="string">&#x27;mongodb://127.0.0.1:27017/blob&#x27;</span>,&#123; useNewUrlParser : <span class="literal">true</span> &#125;)]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> <span class="title class_">AppModule</span> &#123;&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
 <p>article.module.ts使用</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">MongooseModule</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;@nestjs/mongoose&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">ArticleSchema</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;../schemas/article.schema&#x27;</span>;</span><br><span class="line">@<span class="title class_">Module</span>(&#123;</span><br><span class="line">    <span class="comment">// collection article</span></span><br><span class="line">    <span class="attr">imports</span>: [<span class="title class_">MongooseModule</span>.<span class="title function_">forFeature</span>([&#123; <span class="attr">name</span>: <span class="string">&#x27;Article&#x27;</span>, <span class="attr">schema</span>: <span class="title class_">ArticleSchema</span>,<span class="attr">collection</span>:<span class="string">&quot;article&quot;</span> &#125;])]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> <span class="title class_">ArticleModule</span> &#123;&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
 <p>配置article.schema</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义将存储在数据库中的数据类型 与客户端信息json一致</span></span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> mongoose <span class="keyword">from</span> <span class="string">&#x27;mongoose&#x27;</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> <span class="title class_">ArticleSchema</span> = <span class="keyword">new</span> mongoose.<span class="title class_">Schema</span>(&#123;</span><br><span class="line">  <span class="attr">title</span>: <span class="title class_">String</span>,</span><br><span class="line">  <span class="attr">keywords</span>:<span class="title class_">String</span>,</span><br><span class="line">  <span class="attr">author</span>: <span class="title class_">Number</span>,</span><br><span class="line">  <span class="attr">status</span>: <span class="title class_">String</span>,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>以上就是连接数据库的过程，这里需要注意mongodb的安装及启用，这里不再具体说明，可以自行百度。<br /></p>
 <p>服务层service.ts</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">Injectable</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;@nestjs/common&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">Model</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;mongoose&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">InjectModel</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;@nestjs/mongoose&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">Article</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;./article.interface&#x27;</span>;</span><br><span class="line"> </span><br><span class="line">@<span class="title class_">Injectable</span>()</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> <span class="title class_">NewsService</span> &#123;</span><br><span class="line"> </span><br><span class="line">   <span class="title function_">constructor</span>(<span class="params">@InjectModel(<span class="string">&#x27;Article&#x27;</span>) private readonly articleModel: Model&lt;Article&gt;</span>) &#123;&#125;</span><br><span class="line">    <span class="comment">// 获取所有文章</span></span><br><span class="line">    <span class="keyword">async</span> <span class="title function_">getPosts</span>(): <span class="title class_">Promise</span>&lt;<span class="title class_">Article</span>[]&gt; &#123;</span><br><span class="line">        <span class="comment">//  倒序输出</span></span><br><span class="line">        <span class="keyword">const</span> posts = <span class="keyword">await</span> <span class="variable language_">this</span>.<span class="property">articleModel</span>.<span class="title function_">find</span>().<span class="title function_">sort</span>(&#123;<span class="attr">_id</span>:-<span class="number">1</span>&#125;);</span><br><span class="line">        <span class="keyword">return</span> posts;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;  </span><br></pre></td></tr></table></figure>
-
 <p>控制器定义api接口</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">Controller</span>, <span class="title class_">Post</span>, <span class="title class_">UseGuards</span>, <span class="title class_">Body</span>, <span class="title class_">Get</span>, <span class="title class_">HttpStatus</span>, <span class="title class_">Res</span>, <span class="title class_">Query</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;@nestjs/common&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">AuthGuard</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;@nestjs/passport&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">ArticleService</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;./article.service&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">CreatePostDTO</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;./dto/create-post.dto&#x27;</span>;</span><br><span class="line"></span><br><span class="line">@<span class="title class_">Controller</span>(<span class="string">&#x27;article&#x27;</span>)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> <span class="title class_">ArticleController</span> &#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"> private readonly  ariticleService: ArticleService</span>)&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 获取所有文章</span></span><br><span class="line">    @<span class="title class_">Get</span>(<span class="string">&#x27;getArticles&#x27;</span>)</span><br><span class="line">    <span class="comment">// @UseGuards(AuthGuard(&#x27;jwt&#x27;))  这里做了一个token验证，暂不使用</span></span><br><span class="line">    <span class="keyword">async</span> <span class="title function_">getPosts</span>(<span class="params">@Res() res</span>) &#123;</span><br><span class="line">        <span class="comment">// 使用service层服务</span></span><br><span class="line">        <span class="keyword">const</span> posts = <span class="keyword">await</span> <span class="variable language_">this</span>.<span class="property">ariticleService</span>.<span class="title function_">getPosts</span>();</span><br><span class="line">        <span class="comment">// 返回给客户端</span></span><br><span class="line">        <span class="keyword">return</span> res.<span class="title function_">status</span>(<span class="title class_">HttpStatus</span>.<span class="property">OK</span>).<span class="title function_">json</span>(posts);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 客户端调用 </span></span><br><span class="line"><span class="attr">http</span>:<span class="comment">//localhost:3001/article/getArticles</span></span><br></pre></td></tr></table></figure>
 <p>关于问题</p>
@@ -691,7 +699,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#NestJS%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.</span> <span class="nav-text">NestJS介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BB%E8%A6%81%E6%96%87%E4%BB%B6%E4%BD%9C%E7%94%A8%E5%8F%8A%E5%90%AB%E4%B9%89"><span class="nav-number">1.1.</span> <span class="nav-text">主要文件作用及含义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8mongodb%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">1.2.</span> <span class="nav-text">使用mongodb数据库</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#nestjs%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.</span> <span class="nav-text"> NestJS介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BB%E8%A6%81%E6%96%87%E4%BB%B6%E4%BD%9C%E7%94%A8%E5%8F%8A%E5%90%AB%E4%B9%89"><span class="nav-number">1.1.</span> <span class="nav-text"> 主要文件作用及含义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8mongodb%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">1.2.</span> <span class="nav-text"> 使用mongodb数据库</span></a></li></ol></li></ol>
     </div>
 </div>
         </aside>

@@ -228,11 +228,11 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/HTTP/">HTTP</a>&nbsp;
+                        <a href="/tags/GO/">GO</a>&nbsp;
                     </li>
                 
                     <li>
-                        | <a href="/tags/GO/">GO</a>&nbsp;
+                        | <a href="/tags/HTTP/">HTTP</a>&nbsp;
                     </li>
                 
             </ul>
@@ -242,7 +242,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>146 字</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>145 字</span>
         </span>
     
     
@@ -301,11 +301,11 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/HTTP/">HTTP</a>&nbsp;
+                        <a href="/tags/GO/">GO</a>&nbsp;
                     </li>
                 
                     <li>
-                        | <a href="/tags/GO/">GO</a>&nbsp;
+                        | <a href="/tags/HTTP/">HTTP</a>&nbsp;
                     </li>
                 
             </ul>
@@ -315,7 +315,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>146 字</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>145 字</span>
         </span>
     
     
@@ -337,7 +337,7 @@
 
     <div class="article-content markdown-body">
       <blockquote>
-<p>使用Go搭建服务比较方便，引入net&#x2F;http即可</p>
+<p>使用Go搭建服务比较方便，引入net/http即可</p>
 </blockquote>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">  <span class="string">&quot;fmt&quot;</span></span><br><span class="line">  <span class="string">&quot;net/http&quot;</span></span><br><span class="line">  <span class="string">&quot;encoding/json&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">// Data  定义一个数据结构</span></span><br><span class="line"><span class="keyword">type</span> Data <span class="keyword">struct</span>&#123;</span><br><span class="line">	Name <span class="type">string</span> <span class="string">`json:&quot;name&quot;`</span></span><br><span class="line">	Age <span class="type">int</span>  <span class="string">`json:&quot;age&quot;`</span></span><br><span class="line">	Sex <span class="type">bool</span>  <span class="string">`json:&quot;sex&quot;`</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">testApi</span><span class="params">(w http.ResponseWriter, r *Request)</span></span>&#123;</span><br><span class="line">    <span class="comment">// 初始一个json数据 </span></span><br><span class="line">    data := Data&#123;</span><br><span class="line">		Name:<span class="string">&quot;sonderss&quot;</span>,</span><br><span class="line">		Age:<span class="number">24</span>,</span><br><span class="line">		Sex:<span class="literal">true</span>,</span><br><span class="line">	&#125;</span><br><span class="line">	r.ParseForm() <span class="comment">// 解析参数</span></span><br><span class="line"></span><br><span class="line">	jsonStu, _ := json.Marshal(data)  <span class="comment">// 将数据转为json对象格式</span></span><br><span class="line"></span><br><span class="line">	w.Write(jsonStu)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">// 定义url调用对应的业务接口</span></span><br><span class="line">    http.HandleFunc(<span class="string">&quot;/&quot;</span>,testApi)</span><br><span class="line">    <span class="comment">// 监听端口</span></span><br><span class="line">    http.ListenAndServe(<span class="string">&quot;:8005&quot;</span>, <span class="literal">nil</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
     </div>
@@ -367,11 +367,11 @@
     <ul class="post-tags-box">
       
       <li class="tag-item">
-        <a href="/tags/HTTP/">#HTTP</a>&nbsp;
+        <a href="/tags/GO/">#GO</a>&nbsp;
       </li>
       
       <li class="tag-item">
-        <a href="/tags/GO/">#GO</a>&nbsp;
+        <a href="/tags/HTTP/">#HTTP</a>&nbsp;
       </li>
       
     </ul>

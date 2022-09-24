@@ -339,7 +339,8 @@
       <blockquote>
 <p>18年的时候，我做了我人生中第一个网站，从网站代码到服务器，域名…就这样，我开始了对新世界的探索之旅。</p>
 </blockquote>
-<p>18年那个网站，如今早已不能再访问，在它刚入世的时候，我拿给一个后端同事看…，后端同事表示不错，就是界面不敢恭维…<br /><br>纵使如此，我很开心，因此而受到了极大鼓舞，感谢当时的同事。<br /></p>
+<p>18年那个网站，如今早已不能再访问，在它刚入世的时候，我拿给一个后端同事看…，后端同事表示不错，就是界面不敢恭维…<br /><br />
+纵使如此，我很开心，因此而受到了极大鼓舞，感谢当时的同事。<br /></p>
 <p>就不扯以前的事了，在开始写这个系列之前，声明本人水平尚浅，写这类帖子不够专业，但会尽可能把我做这个博客用到的东西，以及如何解决遇到的问题都列出来，也算是一个记录吧。<br /></p>
 <p><strong>所使用到的技术栈</strong></p>
 <ul>
@@ -355,7 +356,6 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn create react-app my-app --template typescript</span><br></pre></td></tr></table></figure>
 <p>运行项目</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn start</span><br></pre></td></tr></table></figure>
-
 <p>前台部分分为以下几个部分，把他们拆分出来做，这样方便管理，结构也比较清晰。</p>
 <ul>
 <li>Author.tsx 个人简介</li>
@@ -375,7 +375,6 @@
 <p>Markdown将Md语法编写的语言转换成了HTML内容，方便灵活，内容丰富。另外本博客的内容主要以学习笔记为主，所以会牵扯到代码部分，于是就选择了md的内容解析。<br /></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 安装插件</span></span><br><span class="line">npm install marked --save</span><br><span class="line">npm install highlight.<span class="property">js</span> </span><br></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 手动引用样式</span></span><br><span class="line"><span class="keyword">import</span> hljs  <span class="keyword">from</span> <span class="string">&#x27;highlight.js&#x27;</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">&#x27;highlight.js/styles/github.css&#x27;</span></span><br><span class="line"><span class="comment">// 文章内容</span></span><br><span class="line"><span class="keyword">let</span> markdown = content</span><br><span class="line"><span class="keyword">const</span> render = <span class="keyword">new</span> marked.<span class="title class_">Renderer</span>()</span><br><span class="line">marked.<span class="title function_">setOptions</span>(&#123;</span><br><span class="line">  <span class="attr">renderer</span>:render,</span><br><span class="line">  <span class="attr">highlight</span>: <span class="function">(<span class="params">code</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> hljs.<span class="title function_">highlightAuto</span>(code).<span class="property">value</span>;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">pedantic</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">gfm</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">breaks</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">sanitize</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">smartLists</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">smartypants</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">xhtml</span>: <span class="literal">false</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 解析成HTML</span></span><br><span class="line"><span class="keyword">let</span> html = <span class="title function_">marked</span>(markdown, &#123; <span class="attr">renderer</span>: render &#125;) </span><br><span class="line"><span class="comment">// 节点使用</span></span><br><span class="line">&lt;div dangerouslySetInnerHTML=&#123;&#123;<span class="attr">__html</span>:html&#125;&#125;&gt;&lt;/div&gt;</span><br><span class="line"><span class="comment">// 相关配置参考官方文档</span></span><br><span class="line"><span class="attr">https</span>:<span class="comment">//marked.js.org/#/USING_ADVANCED.md#highlight</span></span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>路由配置</li>
 </ul>
@@ -384,13 +383,12 @@
 <li>数据请求</li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 安装</span></span><br><span class="line">npm install axios </span><br><span class="line"></span><br><span class="line"><span class="comment">// 封装示例</span></span><br><span class="line"><span class="keyword">const</span> http = axios.<span class="title function_">create</span>(&#123;</span><br><span class="line">    <span class="attr">baseURL</span>:<span class="string">&#x27;http://localhost:3001&#x27;</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">xxx</span>(<span class="params">url,data,type = <span class="string">&#x27;GET&#x27;</span></span>)&#123;</span><br><span class="line">    <span class="keyword">return</span>  <span class="keyword">await</span> <span class="title function_">http</span>(&#123;url,<span class="attr">params</span>:data, <span class="attr">method</span>:type&#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>基本上，到这里准备工作就做的差不多了，src目录（个人）</li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">src </span><br><span class="line">└─ components  <span class="comment">// 组件</span></span><br><span class="line">└─ api        <span class="comment">// 接口封装</span></span><br><span class="line">└─ <span class="keyword">static</span>    <span class="comment">// 静态文件</span></span><br><span class="line">└─ routers  <span class="comment">// 路由文件</span></span><br><span class="line">└─ views   <span class="comment">// 页面</span></span><br></pre></td></tr></table></figure>
 <p>博客地址</p>
-<p>使用浏览器打开：<a class="link"   target="_blank" rel="noopener" href="https://sonders.cn/" >https://sonders.cn<i class="fas fa-external-link-alt"></i></a></p>
+<p>使用浏览器打开：<a class="link"   target="_blank" rel="noopener" href="https://sonders.cn" >https://sonders.cn<i class="fas fa-external-link-alt"></i></a></p>
 
     </div>
 

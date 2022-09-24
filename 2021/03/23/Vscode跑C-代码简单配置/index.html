@@ -238,7 +238,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>386 字</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>387 字</span>
         </span>
     
     
@@ -307,7 +307,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>386 字</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>387 字</span>
         </span>
     
     
@@ -329,35 +329,44 @@
 
     <div class="article-content markdown-body">
       <blockquote>
-<p>由于最近考试需要，所以重新捡起C++开始学习，但是呢，不想用Visual C++ 6.0 （2018年安装）这个IDE，想使用VsCode来写C++（折腾呗），所以记录一下这个过程</p>
+<p>由于最近考试需要，所以重新捡起C<ins>开始学习，但是呢，不想用Visual C</ins> 6.0 （2018年安装）这个IDE，想使用VsCode来写C++（折腾呗），所以记录一下这个过程</p>
 </blockquote>
-<h4 id="环境安装"><a href="#环境安装" class="headerlink" title="环境安装"></a>环境安装</h4><p>首先你需要访问<a class="link"   target="_blank" rel="noopener" href="https://sourceforge.net/projects/mingw-w64/%EF%BC%8C" >https://sourceforge.net/projects/mingw-w64/，<i class="fas fa-external-link-alt"></i></a><br>进行相关版本的下载，或许还需要翻墙。<br /><br>我都试了一遍，费了半天劲终于下载成功了，然后打开一看竟然没有bin目录…，于是我再次尝试别的方法，终于找到了一个稳定的下载源，这里就直接放上安装文件吧，如果您需要，可以直接提取，省去一点宝贵的时间。<br /><br>网盘链接：<a class="link"   target="_blank" rel="noopener" href="https://pan.baidu.com/s/1zn2RwDGEOqcaB40_nnnRGQ" >https://pan.baidu.com/s/1zn2RwDGEOqcaB40_nnnRGQ<i class="fas fa-external-link-alt"></i></a> <br /><br>提取码: 9cxo <br /></p>
+<h4 id="环境安装"><a class="markdownIt-Anchor" href="#环境安装"></a> 环境安装</h4>
+<p>首先你需要访问<a class="link"   target="_blank" rel="noopener" href="https://sourceforge.net/projects/mingw-w64/%EF%BC%8C" >https://sourceforge.net/projects/mingw-w64/，<i class="fas fa-external-link-alt"></i></a><br />
+进行相关版本的下载，或许还需要翻墙。<br /><br />
+我都试了一遍，费了半天劲终于下载成功了，然后打开一看竟然没有bin目录…，于是我再次尝试别的方法，终于找到了一个稳定的下载源，这里就直接放上安装文件吧，如果您需要，可以直接提取，省去一点宝贵的时间。<br /><br />
+网盘链接：<a class="link"   target="_blank" rel="noopener" href="https://pan.baidu.com/s/1zn2RwDGEOqcaB40_nnnRGQ" >https://pan.baidu.com/s/1zn2RwDGEOqcaB40_nnnRGQ<i class="fas fa-external-link-alt"></i></a> <br /><br />
+提取码: 9cxo <br /></p>
 <p>安装成功后，找到bin目录，然后配置环境变量，也就是将bin目录放到系统变量中，这里不再赘述。<br  /></p>
-<h4 id="VsCode插件安装及调试"><a href="#VsCode插件安装及调试" class="headerlink" title="VsCode插件安装及调试"></a>VsCode插件安装及调试</h4><p>首先VsCode是我工作中最喜欢用的编辑器，但基本上没有写过C++的代码，所以需要配置一下环境以及安装一下插件。</p>
-<p>安装插件<br><img  
+<h4 id="vscode插件安装及调试"><a class="markdownIt-Anchor" href="#vscode插件安装及调试"></a> VsCode插件安装及调试</h4>
+<p>首先VsCode是我工作中最喜欢用的编辑器，但基本上没有写过C++的代码，所以需要配置一下环境以及安装一下插件。</p>
+<p>安装插件<br />
+<img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="https://i.loli.net/2021/03/23/ZAJ3ilL1PuwQx2C.png"
-                      alt="微信图片_20210323220816.png"
+                      alt="微信图片_20210323220816.png" 
                 ></p>
-<p>写下一段经典代码（距离上一次写C++代码已经是两三年前的事了）<br><img  
+<p>写下一段经典代码（距离上一次写C++代码已经是两三年前的事了）<br />
+<img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="https://i.loli.net/2021/03/23/4AzCaP15q28G3rZ.png"
-                      alt="微信图片_20210323221029.png"
+                      alt="微信图片_20210323221029.png" 
                 ></p>
 <p>这个时候，右键<b style='color:#1890FF'>Run Code</b>，这个时候一切正常将会在控制台输出Hello world</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="https://i.loli.net/2021/03/23/NRgo5SGUDqlYbKm.png"
-                      alt="微信图片_20210323221427.png"
+                      alt="微信图片_20210323221427.png" 
                 ></p>
-<p>当然也会生成一个.exe的二进制可执行程序文件，打开后如下<br><img  
+<p>当然也会生成一个.exe的二进制可执行程序文件，打开后如下<br />
+<img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="https://i.loli.net/2021/03/23/D79xtebgOlkPI5w.png"
-                      alt="微信图片_20210323221833.png"
+                      alt="微信图片_20210323221833.png" 
                 ></p>
 <p>基本上到这里就可以开始愉快的写代码了，加油吧，打工人！</p>
 
@@ -635,7 +644,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85"><span class="nav-number">1.</span> <span class="nav-text">环境安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#VsCode%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85%E5%8F%8A%E8%B0%83%E8%AF%95"><span class="nav-number">2.</span> <span class="nav-text">VsCode插件安装及调试</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85"><span class="nav-number">1.</span> <span class="nav-text"> 环境安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vscode%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85%E5%8F%8A%E8%B0%83%E8%AF%95"><span class="nav-number">2.</span> <span class="nav-text"> VsCode插件安装及调试</span></a></li></ol>
     </div>
 </div>
         </aside>
