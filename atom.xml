@@ -6,7 +6,7 @@
   <link href="https://sonderss.github.io/atom.xml" rel="self"/>
   
   <link href="https://sonderss.github.io/"/>
-  <updated>2022-09-24T08:13:51.932Z</updated>
+  <updated>2022-12-16T05:22:21.588Z</updated>
   <id>https://sonderss.github.io/</id>
   
   <author>
@@ -17,11 +17,250 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>信号与系统</title>
-    <link href="https://sonderss.github.io/2022/09/24/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F/"/>
-    <id>https://sonderss.github.io/2022/09/24/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F/</id>
+    <title>云函数开发</title>
+    <link href="https://sonderss.github.io/2022/12/16/%E4%BA%91%E5%87%BD%E6%95%B0%E5%BC%80%E5%8F%91/"/>
+    <id>https://sonderss.github.io/2022/12/16/%E4%BA%91%E5%87%BD%E6%95%B0%E5%BC%80%E5%8F%91/</id>
+    <published>2022-12-16T03:05:50.000Z</published>
+    <updated>2022-12-16T05:22:21.588Z</updated>
+    
+    <content type="html"><![CDATA[<p>官网地址： <a class="link"   href="https://uniapp.dcloud.net.cn/uniCloud/" >https://uniapp.dcloud.net.cn/uniCloud/<i class="fas fa-external-link-alt"></i></a></p><h4 id="关联云服务空间"><a class="markdownIt-Anchor" href="#关联云服务空间"></a> 关联云服务空间</h4><p>创建uniapp项目后关联云服务空间<br />可选： 阿里云和腾讯云</p><p><img                       lazyload                     src="/images/loading.svg"                     data-src="https://cdn.staticaly.com/gh/sonderss/image-hosting@master/20221216/%E5%85%B3%E8%81%94%E4%BA%91%E6%9C%8D%E5%8A%A1%E7%A9%BA%E9%97%B4.p1qzqx425hc.webp"                      alt="image"                 ></p><p>如图<br /><img                       lazyload                     src="/images/loading.svg"                     data-src="https://cdn.staticaly.com/gh/sonderss/image-hosting@master/20221216/%E4%BA%91%E5%87%BD%E6%95%B0.5iuqrgtx5rk0.webp"                      alt="image"                 ><br />文件夹说明：</p><ul><li>cloudfunctions 云函数</li><li>database schema文件</li></ul><p>注意：database里的schema文件需要设置权限，如果非admin端操作，需要添加uniIdToken字段</p><p>如图<br /><img                       lazyload                     src="/images/loading.svg"                     data-src="https://cdn.staticaly.com/gh/sonderss/image-hosting@master/20221216/schema.2z58apwj868.webp"                      alt="image"                 ></p><h4 id="关于云函数的packagejson"><a class="markdownIt-Anchor" href="#关于云函数的packagejson"></a> 关于云函数的package.json</h4><p><img                       lazyload                     src="/images/loading.svg"                     data-src="https://cdn.staticaly.com/gh/sonderss/image-hosting@master/20221216/pachage.36vp97yaty00.webp"                      alt="image"                 ></p><ul><li>说明</li></ul><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;uni-cloud-jql&quot;</span>: &#123;&#125; <span class="comment">// JQL语法，对象为空就好</span></span><br><span class="line"><span class="string">&quot;runtime&quot;</span>: <span class="string">&quot;Nodejs12&quot;</span>  <span class="comment">//  node版本</span></span><br></pre></td></tr></table></figure><h4 id="http请求"><a class="markdownIt-Anchor" href="#http请求"></a> http请求</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> url = <span class="string">&quot;https://www.xxx.ai/api&quot;</span></span><br><span class="line"><span class="keyword">const</span> result = <span class="keyword">await</span> uniCloud.<span class="property">httpclient</span>.<span class="title function_">request</span>(url, &#123;</span><br><span class="line">    <span class="attr">method</span>: <span class="string">&#x27;GET&#x27;</span>,</span><br><span class="line">    <span class="attr">data</span>: &#123;</span><br><span class="line">        <span class="attr">pageSize</span>: <span class="number">10</span>,</span><br><span class="line">        <span class="attr">page</span>: <span class="number">0</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">contentType</span>: <span class="string">&#x27;json&#x27;</span>, <span class="comment">// 指定以application/json发送data内的数据</span></span><br><span class="line">    <span class="attr">dataType</span>: <span class="string">&#x27;json&#x27;</span> <span class="comment">// 指定返回值为json格式，自动进行parse</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;返回结果&#x27;</span>, res)</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;官网地址： &lt;a class=&quot;link&quot;   href=&quot;https://uniapp.dcloud.net.cn/uniCloud/&quot; &gt;https://uniapp.dcloud.net.cn/uniCloud/&lt;i class=&quot;fas fa-external-li</summary>
+      
+    
+    
+    
+    <category term="学习" scheme="https://sonderss.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="学习" scheme="https://sonderss.github.io/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2022年12月04日</title>
+    <link href="https://sonderss.github.io/2022/12/04/2022%E5%B9%B412%E6%9C%8804%E6%97%A5/"/>
+    <id>https://sonderss.github.io/2022/12/04/2022%E5%B9%B412%E6%9C%8804%E6%97%A5/</id>
+    <published>2022-12-04T08:46:04.000Z</published>
+    <updated>2022-12-05T01:42:18.686Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天是12月4号，周日，天气变冷。<br />想不起以前的冬天是怎么度过的了，因为春夏秋冬我都是一个被子，而今年这个冬天非常寒冷，睡觉翻个身都冻的不行。<br />所以连夜买了电热毯，但是一个被子的问题还是无法解决，又不想再买被子，于是就这样过了两天，受不了，又买了一个洗脚盆，买了一个棉拖，买了一套保暖内衣，寒冷的问题似乎有所改善。<br />可能是随着年龄的增长，身体已经不允许对抗自然条件了。<br />这个月是2022年最后一个月，这一年就要过去了，而明年后怎么样，会发生什么，一无所知，似乎迷茫更多了。<br />今年读了16本书，正在读傅高义的《邓小平时代》。<br />今年是疫情的第三年，国内发生了很多让人糟心的事，不过今天上海发布通知说，明天0点开始，公共场所包括公共交通不再检查核酸检测证明，这似乎是一个好消息，到年底不知道能不能放开，其实放不放开对我的工作生活没有什么影响，但我还是希望能够放开，虽然我对于放开有一点健康担心。<br />记得去年计划着今年节假日能够去旅游，可是因为种种原因，没有得以实现，我很想到各地去看一看，也想去国外看一看，可是身上还有别的事，不能随心所欲，争取出去旅游一次，放松一下身心，我太累了。<br />如果能够有机会去国外，我想去美国，新西兰，阿根廷，日本，去这些国家看一看，尝尝当地的美食。<br />已经工作四五年了，似乎这四五年里发生了很多事，又似乎什么都没发生，我只知道从没停下来去享受生活，我现在非常想要停下来享受生活，可是我又害怕停下来会不适应，只能保持现状。<br />年底了，要做的事还是有很多，我很害怕改变，希望我能有一个幸福的结局。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;今天是12月4号，周日，天气变冷。&lt;br /&gt;
+想不起以前的冬天是怎么度过的了，因为春夏秋冬我都是一个被子，而今年这个冬天非常寒冷，睡觉翻个身都冻的不行。&lt;br /&gt;
+所以连夜买了电热毯，但是一个被子的问题还是无法解决，又不想再买被子，于是就这样过了两天，受不了，又买了一个</summary>
+      
+    
+    
+    
+    <category term="生活" scheme="https://sonderss.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+    <category term="生活" scheme="https://sonderss.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>crawlee</title>
+    <link href="https://sonderss.github.io/2022/12/02/crawlee/"/>
+    <id>https://sonderss.github.io/2022/12/02/crawlee/</id>
+    <published>2022-12-02T08:36:12.000Z</published>
+    <updated>2022-12-02T08:44:13.643Z</updated>
+    
+    <content type="html"><![CDATA[<!-- /docs/introduction/setting-up --><blockquote><p>爬取网页数据的一个工具crawlee, 地址： <a class="link"   href="https://crawlee.dev" >https://crawlee.dev<i class="fas fa-external-link-alt"></i></a></p></blockquote><h4 id="安装"><a class="markdownIt-Anchor" href="#安装"></a> 安装</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npx crawlee create my-crawler</span><br><span class="line"></span><br><span class="line">cd my-crawler</span><br><span class="line"></span><br><span class="line">npm start</span><br></pre></td></tr></table></figure><h4 id="示例"><a class="markdownIt-Anchor" href="#示例"></a> 示例</h4><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">CheerioCrawler</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;crawlee&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> crawler = <span class="keyword">new</span> <span class="title class_">CheerioCrawler</span>(&#123;</span><br><span class="line">    <span class="keyword">async</span> <span class="title function_">requestHandler</span>(<span class="params">&#123; $, request &#125;</span>) &#123;</span><br><span class="line">        <span class="keyword">const</span> title = $(<span class="string">&#x27;title&#x27;</span>).<span class="title function_">text</span>();</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`The title of &quot;<span class="subst">$&#123;request.url&#125;</span>&quot; is: <span class="subst">$&#123;title&#125;</span>.`</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">await</span> crawler.<span class="title function_">run</span>([<span class="string">&#x27;https://www.baidu.com&#x27;</span>]);</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;!-- /docs/introduction/setting-up --&gt;
+&lt;blockquote&gt;
+&lt;p&gt;爬取网页数据的一个工具crawlee, 地址： &lt;a class=&quot;link&quot;   href=&quot;https://crawlee.dev&quot; &gt;https://crawlee</summary>
+      
+    
+    
+    
+    <category term="学习" scheme="https://sonderss.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="学习" scheme="https://sonderss.github.io/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>图床上传</title>
+    <link href="https://sonderss.github.io/2022/11/29/%E5%9B%BE%E5%BA%8A%E4%B8%8A%E4%BC%A0/"/>
+    <id>https://sonderss.github.io/2022/11/29/%E5%9B%BE%E5%BA%8A%E4%B8%8A%E4%BC%A0/</id>
+    <published>2022-11-29T08:04:39.000Z</published>
+    <updated>2022-11-29T08:15:21.028Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>由于业务需要用到图床上传于是找到了一个比较好用的图床，<a class="link"   href="https://imgbb.com/" >https://imgbb.com/<i class="fas fa-external-link-alt"></i></a></p></blockquote><p>这里仅记录通过API上传</p><ol><li>通过邮箱注册账号</li><li>注册完以后参考文档 <a class="link"   href="https://api.imgbb.com/" >https://api.imgbb.com/<i class="fas fa-external-link-alt"></i></a></li></ol><p>先获取key: 6f76b23f17axxxxxxxxxx</p><p>上传图片接口: <a class="link"   href="https://api.imgbb.com/1/upload" >https://api.imgbb.com/1/upload<i class="fas fa-external-link-alt"></i></a></p><p>有四个参数</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> data = &#123;</span><br><span class="line">    <span class="attr">key</span>: <span class="string">&#x27;&#x27;</span>, <span class="comment">// 你申请到的key</span></span><br><span class="line">    <span class="attr">image</span>: <span class="string">&#x27;&#x27;</span>, <span class="comment">// 所要上传的图片 可以是base64 也可以是一个url  也可以是binary file</span></span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;&#x27;</span>, <span class="comment">// 图片名称 该名称是访问外链的图片名称 同名将覆盖</span></span><br><span class="line">    <span class="attr">expiration</span>: <span class="number">60</span> <span class="comment">// 过期时间， 60-15552000 单位：秒数</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>这里例子是使用如果是在云函数中调用</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> key = <span class="string">&#x27;6f76b23f17axxxxxxxxxx&#x27;</span></span><br><span class="line"><span class="keyword">const</span> baseUrl =  <span class="string">`https://api.imgbb.com/1/upload?key=<span class="subst">$&#123;key&#125;</span>`</span></span><br><span class="line"><span class="keyword">const</span> res = <span class="keyword">await</span> uniCloud.<span class="property">httpclient</span>.<span class="title function_">request</span>(baseUrl, &#123;</span><br><span class="line">    <span class="attr">method</span>: <span class="string">&#x27;POST&#x27;</span>,</span><br><span class="line">    <span class="attr">dataAsQueryString</span>:<span class="literal">false</span>,</span><br><span class="line">    <span class="attr">data</span>: &#123;</span><br><span class="line">        <span class="attr">key</span>: key,</span><br><span class="line">        <span class="attr">image</span>: event.<span class="property">base64</span>,  <span class="comment">// 如果是base64 必须使用 post</span></span><br><span class="line">        <span class="attr">name</span>: <span class="string">&#x27;60s1&#x27;</span>,</span><br><span class="line">        <span class="attr">expiration</span>: <span class="number">600</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">headers</span>: &#123;</span><br><span class="line">        <span class="string">&quot;Content-Type&quot;</span>: <span class="string">&quot;application/x-www-form-urlencoded&quot;</span> <span class="comment">// 否则不会将base64上传</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">timeout</span>: <span class="number">30</span>*<span class="number">1000</span>,</span><br><span class="line">    <span class="attr">dataType</span>: <span class="string">&#x27;json&#x27;</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure><p>返回的结果</p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 返回的结果</span></span><br><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2ndCYJK&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;title&quot;</span><span class="punctuation">:</span> <span class="string">&quot;c1f64245afb2&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;url_viewer&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://ibb.co/2ndCYJK&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://i.ibb.co/w04Prt6/c1f64245afb2.gif&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;display_url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://i.ibb.co/98W13PY/c1f64245afb2.gif&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;width&quot;</span><span class="punctuation">:</span><span class="string">&quot;1&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;height&quot;</span><span class="punctuation">:</span><span class="string">&quot;1&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;size&quot;</span><span class="punctuation">:</span> <span class="string">&quot;42&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;time&quot;</span><span class="punctuation">:</span> <span class="string">&quot;1552042565&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;expiration&quot;</span><span class="punctuation">:</span><span class="string">&quot;0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;image&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;filename&quot;</span><span class="punctuation">:</span> <span class="string">&quot;c1f64245afb2.gif&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;c1f64245afb2&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;mime&quot;</span><span class="punctuation">:</span> <span class="string">&quot;image/gif&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;extension&quot;</span><span class="punctuation">:</span> <span class="string">&quot;gif&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://i.ibb.co/w04Prt6/c1f64245afb2.gif&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;thumb&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;filename&quot;</span><span class="punctuation">:</span> <span class="string">&quot;c1f64245afb2.gif&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;c1f64245afb2&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;mime&quot;</span><span class="punctuation">:</span> <span class="string">&quot;image/gif&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;extension&quot;</span><span class="punctuation">:</span> <span class="string">&quot;gif&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://i.ibb.co/2ndCYJK/c1f64245afb2.gif&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;medium&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;filename&quot;</span><span class="punctuation">:</span> <span class="string">&quot;c1f64245afb2.gif&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;c1f64245afb2&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;mime&quot;</span><span class="punctuation">:</span> <span class="string">&quot;image/gif&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;extension&quot;</span><span class="punctuation">:</span> <span class="string">&quot;gif&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://i.ibb.co/98W13PY/c1f64245afb2.gif&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;delete_url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://ibb.co/2ndCYJK/670a7e48ddcb85ac340c717a41047e5c&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;success&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;status&quot;</span><span class="punctuation">:</span> <span class="number">200</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;由于业务需要用到图床上传于是找到了一个比较好用的图床，&lt;a class=&quot;link&quot;   href=&quot;https://imgbb.com/&quot; &gt;https://imgbb.com/&lt;i class=&quot;fas fa-external-link-alt</summary>
+      
+    
+    
+    
+    <category term="学习" scheme="https://sonderss.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="学习" scheme="https://sonderss.github.io/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>刀锋</title>
+    <link href="https://sonderss.github.io/2022/11/28/%E5%88%80%E9%94%8B/"/>
+    <id>https://sonderss.github.io/2022/11/28/%E5%88%80%E9%94%8B/</id>
+    <published>2022-11-28T01:45:24.000Z</published>
+    <updated>2022-11-28T02:27:00.969Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>看完了毛姆的《刀锋》，似乎有了些新的感悟</p></blockquote><p>因为不喜欢看译文，于是前半部分看的比较敷衍一目十行，但是毛姆写得太好了，引人入胜于是看得津津有味。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;看完了毛姆的《刀锋》，似乎有了些新的感悟&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;因为不喜欢看译文，于是前半部分看的比较敷衍一目十行，但是毛姆写得太好了，引人入胜于是看得津津有味。&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    <category term="阅读" scheme="https://sonderss.github.io/categories/%E9%98%85%E8%AF%BB/"/>
+    
+    
+    <category term="阅读" scheme="https://sonderss.github.io/tags/%E9%98%85%E8%AF%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>穷查理宝典</title>
+    <link href="https://sonderss.github.io/2022/11/09/%E7%A9%B7%E6%9F%A5%E7%90%86%E5%AE%9D%E5%85%B8/"/>
+    <id>https://sonderss.github.io/2022/11/09/%E7%A9%B7%E6%9F%A5%E7%90%86%E5%AE%9D%E5%85%B8/</id>
+    <published>2022-11-09T12:22:58.000Z</published>
+    <updated>2022-11-28T01:44:35.667Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>简单是长期努力工作的结果，而不是起点<br />——《穷查理宝典》</p></blockquote><p>今天终于读完了《穷查理宝典》，耗时20时8分。每当读到书中某些观点或道理或事实时，总是给我一种茅塞顿开，豁然开朗的愉悦。<br />查理-芒格是一位著名的投资家，伯克希尔-哈撒韦的副主席。<br />以前只听说巴菲特，事实上巴菲特和查理认识于1959年，至今已有半个世纪了。比较有趣的是，查理年轻时还在巴菲特家里的店铺干过活，但那时他们并没见过面。<br />查理非常有智慧，像是一位智者，他说他从没见过哪个聪明人不每天阅读的———一个都没有。<br />我也经常想阅读到底会带来什么，我大多数的阅读时间是在路上，比如地铁公交上，上厕所时，遇到周末偶尔才连续性读上3个小时，所以我不是一个爱读书的人，至少比起专门花时间去读书我更喜欢出去走走，但即使是很少的阅读时间，也让我在今年11个月里看完了16本书，293.9万字，平时丝毫没注意到竟然读了这么多，可见坚持一件小事，经过时间的积累，就能够发生自己意想不到的结果。<br />那么读书给我来了什么，我看的大多数是经济学或者社会历史类的书，小说占3/16，其实比较起来，小说是最容易读只有偶尔才会停下来体会其中寓意，而经济学类的书，由于专业词（陌生）较多，有点难读，但是一些实例读起来很有意思，会有些豁然开朗之感。但是往往读完就忘记了。<br />可是并不是完全的忘记，有时会在生活中遇到一些事情，我却能分辨出一些原理或本质，我会开心的不得了，于是又会多看一些。<br />可是我却写不出我的感觉，无法精确的用文字来描述，所以假如你读到了我这篇文字，希望你也能多看书，去体会那种妙不可言。<br />有时看到晦涩难懂之处，我往往是本能的快速浏览过去，可是这完全是自欺欺人，于是会去查资料，然后重新再读，这样做的多了，有种做研究的感觉，所以痛苦也是常有的，但就像开头那句话一样，<code>简单是长期努力工作的结果，而不是起点</code>。<br />这本书让我发生了一些变化，那就是积极的面对问题，保持阅读的习惯，虽不能让我发大财，可是能够学会开心聪明的生活也算是一种更好的收获了。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;简单是长期努力工作的结果，而不是起点&lt;br /&gt;
+——《穷查理宝典》&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;今天终于读完了《穷查理宝典》，耗时20时8分。每当读到书中某些观点或道理或事实时，总是给我一种茅塞顿开，豁然开朗的愉悦。&lt;br /&gt;
+查</summary>
+      
+    
+    
+    
+    <category term="生活" scheme="https://sonderss.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+    <category term="生活" scheme="https://sonderss.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>周末一次运动</title>
+    <link href="https://sonderss.github.io/2022/11/06/%E5%91%A8%E6%9C%AB%E4%B8%80%E6%AC%A1%E8%BF%90%E5%8A%A8/"/>
+    <id>https://sonderss.github.io/2022/11/06/%E5%91%A8%E6%9C%AB%E4%B8%80%E6%AC%A1%E8%BF%90%E5%8A%A8/</id>
+    <published>2022-11-06T11:29:06.000Z</published>
+    <updated>2022-11-28T01:44:35.667Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>周末去了附近羽毛球馆打球，非常放松和愉悦的一次运动</p></blockquote><p>平时周末基本都是在屋里看电影或者看《生活大爆炸》，觉得这样浪费一个周末挺没劲的，再加上之前同事喊了几次去打球我都拒绝了，这周决定一起去玩一次。<br />地点：<code>附近某羽毛球馆</code><br />下午13点的时候收拾一下出门，导航显示骑行比坐地铁公交要快3倍，于是用支付宝扫了一辆小蓝车，出发~过完两个和红绿灯后，发现前方在修路，心想难道要绕路吗，往前一走，发现是有路的，只是要过一个天桥，于是推车上临时搭建的步行梯，就这样慢慢上了桥面，下桥的时候想着省事，就紧握刹车，慢慢推进，最后3、4米时享受往下冲刺的速度感，虽然这个速度是安全范围内可控的速度，但还是比较快的——根据我以安全为主的人生观而言。<br />我提前到场了。在路边摘了口罩，看着路上来往的人和车，地上的落叶，两旁的树，真是好看，这才是生活啊~~<br />有的是家长带着小朋友来玩，有的是成群结队而来，整个球馆充满了活力。<br />因为很久没打羽毛球，而且是这种标准的场地，开头有些不适应，但是运动起来之后，非常有感觉，非常有精神，运动的感觉我太喜欢了，尤其是竞技场上的运动。<br />打了两个小时，满身大汗，骑着小蓝车回去冲澡，有风，但阳光很好。<br />洗澡的时候想之后天气好的话要骑着自行车多出去转一转。<br />最近也在看运动相机，想着骑行的时候可以记录沿途的风景，可是运动相机一是画质不太好而且比较贵，暂没做出决定~<br />坦白说，我喜欢我目前的生活，不再浑浑噩噩，不再顾影自怜，不再遗憾往事，而是想着到处旅游，多看书，丰富自己的内心世界，建立自己积极向上的一面，其实我觉得我本身就是一个乐观主义者，刚毕业时有些蠢拎不清什么是好什么是坏，可我还是相信未来的自己会变好，幸运的是找到了自己热爱的工作，还算可以。<br />对自己的要求大概就是少犯蠢，与人向善，提高自己，开心一点。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;周末去了附近羽毛球馆打球，非常放松和愉悦的一次运动&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;平时周末基本都是在屋里看电影或者看《生活大爆炸》，觉得这样浪费一个周末挺没劲的，再加上之前同事喊了几次去打球我都拒绝了，这周决定一起去玩一次。&lt;br /&gt;</summary>
+      
+    
+    
+    
+    <category term="生活" scheme="https://sonderss.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+    <category term="生活" scheme="https://sonderss.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>uniapp的体验</title>
+    <link href="https://sonderss.github.io/2022/10/27/uniapp%E7%9A%84%E4%BD%93%E9%AA%8C/"/>
+    <id>https://sonderss.github.io/2022/10/27/uniapp%E7%9A%84%E4%BD%93%E9%AA%8C/</id>
+    <published>2022-10-27T02:11:56.000Z</published>
+    <updated>2022-10-28T09:55:45.845Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>从18年开始使用HBuilder作为IDE进行开发，当时还是wapApp，打包极其方便，后来HBuilder X代替了HBuilder，算下来我也算是重度使用用户了，记录下这几年的使用心得。</p></blockquote><h5 id="hbuilder"><a class="markdownIt-Anchor" href="#hbuilder"></a> HBuilder</h5><p><img                       lazyload                     src="/images/loading.svg"                     data-src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.haote.com%2Fupload%2Fgame%2F20140317%2Fhaote2014031793589.jpg&amp;refer=http%3A%2F%2Fimg.haote.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=auto?sec=1669429278&amp;t=ebb6b2f7c5561697c99de28a8f55c987"                      alt="image"                 ></p><p>咳咳，每次看到这个界面都有一种怀旧感，那是我逝去的青春~</p><p>因为早已使用<b>HBuilder X</b>来开发，所以代码部分用<b>HBuilder X</b>来展示。<br />这里是<a href='https://www.dcloud.io/hbuilderx.html' style='color:#42b983;'>官方文档</a></p><h5 id="uniapp"><a class="markdownIt-Anchor" href="#uniapp"></a> UNIAPP</h5><h6 id="uniapp介绍"><a class="markdownIt-Anchor" href="#uniapp介绍"></a> uniapp介绍</h6><p><b><code>uni-app</code></b>  是一个使用 <a class="link"   href="https://vuejs.org/" >Vue.js<i class="fas fa-external-link-alt"></i></a> 开发所有前端应用的框架，开发者编写一套代码，可发布到iOS、Android、Web（响应式）、以及各种小程序（微信/支付宝/百度/头条/飞书/QQ/快手/钉钉/淘宝）、快应用等多个平台。</p><p>DCloud公司拥有900万开发者、数百万应用、12亿手机端月活用户、数千款<b><code>uni-app</code></b>插件、70+微信/qq群。阿里小程序工具官方内置<b><code>uni-app</code></b>，腾讯课堂官方为uni-app录制培训课程，开发者可以放心选择。</p><p><b><code>uni-app</code></b>在手，做啥都不愁。即使不跨端，<b>uni-app</b>也是更好的小程序开发框架、更好的App跨平台框架、更方便的H5开发框架。不管领导安排什么样的项目，你都可以快速交付，不需要转换开发思维、不需要更改开发习惯。</p><h6 id="uniapp使用"><a class="markdownIt-Anchor" href="#uniapp使用"></a> uniapp使用</h6><p><a class="link"   href="https://uniapp.dcloud.net.cn/quickstart-hx.html" >快速上手<i class="fas fa-external-link-alt"></i></a></p><h5 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h5><ol><li>大概在2019年用<code>uniapp</code>来开发移动端应用的时候，真机体验十分不好，BUG较多</li><li>大概在2021年时，跨端开发的体验有明显的提高</li><li>用户量很多，因为<code>uniapp</code>开发的优势就是快速，高效，开发成本较低</li><li>开发APP时，会遇到苹果和安卓样式不一致的问题，总体都能处理</li><li>社区问答质量不太高，有时无法找到较好的解决办法</li><li>蓝牙模块兼容不是很好，获取不到蓝牙特征值</li><li>扫码准确度不够，错误率较高</li><li>配合<a class="link"   href="https://unicloud.dcloud.net.cn/" >uniCloud<i class="fas fa-external-link-alt"></i></a>, 可快速整合前后端数据库的交互</li></ol><p>整体而言，如果你追求快速高效的开发体验，<code>uniapp</code>是非常适合的选择，当然也可以选择<a class="link"   href="https://taro.jd.com/" >taro<i class="fas fa-external-link-alt"></i></a>、<a class="link"   href="https://www.reactnative.cn/" >RN<i class="fas fa-external-link-alt"></i></a><br />期待<code>uniapp</code>越来越好</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;从18年开始使用HBuilder作为IDE进行开发，当时还是wapApp，打包极其方便，后来HBuilder X代替了HBuilder，算下来我也算是重度使用用户了，记录下这几年的使用心得。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h5 id=&quot;hb</summary>
+      
+    
+    
+    
+    <category term="学习记录" scheme="https://sonderss.github.io/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
+    
+    
+    <category term="学习" scheme="https://sonderss.github.io/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>博客自动化部署</title>
+    <link href="https://sonderss.github.io/2022/09/24/%E5%8D%9A%E5%AE%A2%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/"/>
+    <id>https://sonderss.github.io/2022/09/24/%E5%8D%9A%E5%AE%A2%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/</id>
+    <published>2022-09-24T08:30:33.000Z</published>
+    <updated>2022-12-16T04:15:15.727Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>使用Github自动化部署</p></blockquote><p>参考文章: <a class="link"   href="https://juejin.cn/post/6943895271751286821" >https://juejin.cn/post/6943895271751286821<i class="fas fa-external-link-alt"></i></a></p><p>配置步骤</p><ol><li>生成令牌 <a class="link"   href="https://github.com/settings/tokens" >https://github.com/settings/tokens<i class="fas fa-external-link-alt"></i></a></li><li>在博客的仓库地址 <a class="link"   href="https://github.com/xxx/xxxBlob/settings/secrets/actions" >https://github.com/xxx/xxxBlob/settings/secrets/actions<i class="fas fa-external-link-alt"></i></a> 中新增/更新刚刚生成的令牌（该令牌可设置过期时间）</li><li>在hexo博客项目中找到.github =&gt; workflows =&gt;  hexo-deploy.yml</li></ol><p>注意：生成的令牌如果失效，那么push到分支后，将会打包失败，此时只需在第一步中找到该令牌，update之后，将新令牌也更新到第二步对应的secrets/actions即可</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">deploying</span> <span class="string">Hexo</span> <span class="string">project</span> <span class="string">to</span> <span class="string">GitHub</span> <span class="string">pages</span></span><br><span class="line"><span class="attr">on:</span></span><br><span class="line">  <span class="attr">push:</span></span><br><span class="line">    <span class="attr">branches:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">main</span> <span class="comment"># master 分支有 push 行为时就触发这个 action 我这里改成了我分支名称 main</span></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">build-and-deploy:</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Checkout</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/checkout@main</span></span><br><span class="line"></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Build</span> <span class="string">and</span> <span class="string">Deploy</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">theme-keep/hexo-deploy-github-pages-action@master</span> <span class="comment"># 使用专门部署 Hexo 到 GitHub pages 的 action</span></span><br><span class="line">        <span class="attr">env:</span></span><br><span class="line">          <span class="attr">PERSONAL_TOKEN:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.HEXO_DEPLOY</span> <span class="string">&#125;&#125;</span> <span class="comment"># secret 名 这个填写第二步新增时那个名称</span></span><br><span class="line">          <span class="attr">PUBLISH_REPOSITORY:</span> <span class="string">sonderss/xxx</span>  <span class="comment"># 公共仓库，格式：GitHub 用户名/仓库名 这里就是博客静态文件所在仓库地址</span></span><br><span class="line">          <span class="attr">BRANCH:</span> <span class="string">gh-pages</span> <span class="comment"># 分支，填 gh-pages 就行</span></span><br><span class="line">          <span class="attr">PUBLISH_DIR:</span> <span class="string">./public</span> <span class="comment"># 部署 public 目录下的文件</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;使用Github自动化部署&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;参考文章: &lt;a class=&quot;link&quot;   href=&quot;https://juejin.cn/post/6943895271751286821&quot; &gt;https://juejin</summary>
+      
+    
+    
+    
+    <category term="学习" scheme="https://sonderss.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="自动化部署" scheme="https://sonderss.github.io/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>信号与系统01</title>
+    <link href="https://sonderss.github.io/2022/09/24/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F01/"/>
+    <id>https://sonderss.github.io/2022/09/24/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F01/</id>
     <published>2022-09-24T08:13:30.000Z</published>
-    <updated>2022-09-24T08:13:51.932Z</updated>
+    <updated>2022-09-24T08:28:52.640Z</updated>
     
     <content type="html"><![CDATA[<h4 id="信号分类"><a class="markdownIt-Anchor" href="#信号分类"></a> 信号分类</h4><table><thead><tr><th style="text-align:center">确定信号</th><th style="text-align:center">随机信号</th><th style="text-align:center">连续信号</th><th style="text-align:left">离散信号</th></tr></thead><tbody><tr><td style="text-align:center">可用确定时间函数表示的信号</td><td style="text-align:center">不能用确定的函数描述，只有统计特性</td><td style="text-align:center">连续范围内有定义的信号</td><td style="text-align:left">只在离散的瞬间才有定义</td></tr></tbody></table><h5 id="周期与非周期"><a class="markdownIt-Anchor" href="#周期与非周期"></a> 周期与非周期</h5><blockquote><p>周期信号: 是定义在（-<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">\infty</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">∞</span></span></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">\infty</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">∞</span></span></span></span>）区间，每隔一定时间按相同规律重复变化的信号</p></blockquote><blockquote><p>非周期信号: 没有在一定时间按照相同规律重复变化的信号</p></blockquote><p>例：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>t</mi><mo>)</mo><mo>=</mo><mi>f</mi><mo>(</mo><mi>t</mi><mo>+</mo><mi>m</mi><mi>T</mi><mo>)</mo><mo separator="true">,</mo><mi>m</mi><mo>=</mo><mn>0</mn><mo separator="true">,</mo><mo>±</mo><mn>1</mn><mo separator="true">,</mo><mo>±</mo><mn>2</mn><mo separator="true">,</mo><mo>±</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">f(t)=f(t+mT), m=0, \pm1, \pm2,  \pm3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathit">t</span><span class="mclose">)</span><span class="mrel">=</span><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathit">t</span><span class="mbin">+</span><span class="mord mathit">m</span><span class="mord mathit" style="margin-right:0.13889em;">T</span><span class="mclose">)</span><span class="mpunct">,</span><span class="mord mathit">m</span><span class="mrel">=</span><span class="mord mathrm">0</span><span class="mpunct">,</span><span class="mord">±</span><span class="mord mathrm">1</span><span class="mpunct">,</span><span class="mord">±</span><span class="mord mathrm">2</span><span class="mpunct">,</span><span class="mord">±</span><span class="mord mathrm">3</span></span></span></span></p><h5 id="能量信号和功率信号"><a class="markdownIt-Anchor" href="#能量信号和功率信号"></a> 能量信号和功率信号</h5><p>将信号<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f(t)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathit">t</span><span class="mclose">)</span></span></span></span>施加在1Ω电阻上，它所消耗的瞬时功率为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mi>f</mi><mo>(</mo><mi>t</mi><mo>)</mo><msup><mi mathvariant="normal">∣</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">|f(t)|^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8141079999999999em;"></span><span class="strut bottom" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">∣</span><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathit">t</span><span class="mclose">)</span><span class="mord"><span class="mord mathrm">∣</span><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathrm">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></p><blockquote><p>能量信号：能量有限<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn><mo>&lt;</mo></mrow><annotation encoding="application/x-tex">0&lt;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.68354em;vertical-align:-0.0391em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">0</span><span class="mrel">&lt;</span></span></span></span> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi></mrow><annotation encoding="application/x-tex">E</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.05764em;">E</span></span></span></span> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&lt;</mo></mrow><annotation encoding="application/x-tex">&lt;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.5391em;"></span><span class="strut bottom" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="base textstyle uncramped"><span class="mrel">&lt;</span></span></span></span> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">\infty</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">∞</span></span></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">P=0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.13889em;">P</span><span class="mrel">=</span><span class="mord mathrm">0</span></span></span></span>，功率为0</p></blockquote><blockquote><p>功率信号：功率有限<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn><mo>&lt;</mo></mrow><annotation encoding="application/x-tex">0 &lt;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.68354em;vertical-align:-0.0391em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">0</span><span class="mrel">&lt;</span></span></span></span> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.13889em;">P</span></span></span></span> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&lt;</mo></mrow><annotation encoding="application/x-tex">&lt;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.5391em;"></span><span class="strut bottom" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="base textstyle uncramped"><span class="mrel">&lt;</span></span></span></span> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">\infty</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">∞</span></span></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi><mo>=</mo></mrow><annotation encoding="application/x-tex">E=</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.05764em;">E</span><span class="mrel">=</span></span></span></span> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">\infty</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">∞</span></span></span></span> 的信号</p></blockquote><h5 id="因果信号和非因果信号"><a class="markdownIt-Anchor" href="#因果信号和非因果信号"></a> 因果信号和非因果信号</h5><blockquote><p>因果信号：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi><mo>≥</mo><mn>0</mn><mo separator="true">,</mo><mi>f</mi><mo>(</mo><mi>t</mi><mo>)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">t \geq  0, f(t)=0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit">t</span><span class="mrel">≥</span><span class="mord mathrm">0</span><span class="mpunct">,</span><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathit">t</span><span class="mclose">)</span><span class="mrel">=</span><span class="mord mathrm">0</span></span></span></span>的信号<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f(t)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathit">t</span><span class="mclose">)</span></span></span></span>，即<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">t=0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">t</span><span class="mrel">=</span><span class="mord mathrm">0</span></span></span></span>时接入的信号，例如阶跃信号</p></blockquote><blockquote><p>非因果信号：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi><mo>&lt;</mo><mn>0</mn><mo separator="true">,</mo><mi>f</mi><mo>(</mo><mi>t</mi><mo>)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">t&lt;0,f(t)=0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit">t</span><span class="mrel">&lt;</span><span class="mord mathrm">0</span><span class="mpunct">,</span><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathit">t</span><span class="mclose">)</span><span class="mrel">=</span><span class="mord mathrm">0</span></span></span></span>的信号，（除0信号外）</p></blockquote>]]></content>
     
@@ -50,7 +289,7 @@
     <link href="https://sonderss.github.io/2022/09/08/%E8%8E%B7%E5%8F%96url%E5%8F%82%E6%95%B0/"/>
     <id>https://sonderss.github.io/2022/09/08/%E8%8E%B7%E5%8F%96url%E5%8F%82%E6%95%B0/</id>
     <published>2022-09-08T11:20:05.000Z</published>
-    <updated>2022-09-08T11:21:15.039Z</updated>
+    <updated>2022-09-24T08:18:26.169Z</updated>
     
     <content type="html"><![CDATA[<blockquote><p>从URL中获取参数的封装方法</p></blockquote><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">getQueryString</span>(<span class="params">e</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> t = <span class="keyword">new</span> <span class="title class_">RegExp</span>(<span class="string">&quot;(^|&amp;)&quot;</span> + e + <span class="string">&quot;=([^&amp;]*)(&amp;|$)&quot;</span>, <span class="string">&quot;i&quot;</span>),</span><br><span class="line">        n = <span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">search</span>.<span class="title function_">substr</span>(<span class="number">1</span>).<span class="title function_">match</span>(t);</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">null</span> != n ? <span class="built_in">unescape</span>(n[<span class="number">2</span>]) : <span class="literal">null</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">getQueryString</span>(<span class="string">&quot;id&quot;</span>) <span class="comment">// 返回ID值</span></span><br></pre></td></tr></table></figure>]]></content>
     
@@ -312,252 +551,6 @@
     
     
     <category term="博客" scheme="https://sonderss.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>不想上班</title>
-    <link href="https://sonderss.github.io/2022/07/31/%E4%B8%8D%E6%83%B3%E4%B8%8A%E7%8F%AD/"/>
-    <id>https://sonderss.github.io/2022/07/31/%E4%B8%8D%E6%83%B3%E4%B8%8A%E7%8F%AD/</id>
-    <published>2022-07-31T07:04:28.000Z</published>
-    <updated>2022-08-11T02:57:30.027Z</updated>
-    
-    <content type="html"><![CDATA[<p>今天加班，不想上班可以吗？</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;今天加班，不想上班可以吗？&lt;/p&gt;
-</summary>
-      
-    
-    
-    
-    <category term="自言自语" scheme="https://sonderss.github.io/categories/%E8%87%AA%E8%A8%80%E8%87%AA%E8%AF%AD/"/>
-    
-    
-    <category term="上班" scheme="https://sonderss.github.io/tags/%E4%B8%8A%E7%8F%AD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2022年7月15日</title>
-    <link href="https://sonderss.github.io/2022/07/15/2022%E5%B9%B47%E6%9C%8815%E6%97%A5/"/>
-    <id>https://sonderss.github.io/2022/07/15/2022%E5%B9%B47%E6%9C%8815%E6%97%A5/</id>
-    <published>2022-07-15T12:29:38.000Z</published>
-    <updated>2022-08-11T02:42:04.662Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="睡觉"><a class="markdownIt-Anchor" href="#睡觉"></a> 睡觉</h3><p>最近作息时间正常了，每天睡得很早，醒来后也很有精神，真是舒服的状态，我很喜欢规律的感觉。<br />由于疫情的原因，有好几个月没有跑步了，跑一公里就会气喘吁吁，还是要多运动，运动真的会使心情放松和情绪缓解。</p><h3 id="看书"><a class="markdownIt-Anchor" href="#看书"></a> 看书</h3><p>最近三个月看了四五本书（包括在看），全是关于经济类的，有些基本常识能够以书面的形式理解下来，还是别有趣味，也多了一种开阔的感觉。<br />看理性类的书，有很多数据支撑，有时非常枯燥，但是专注进去就会非常有趣和充实，像小说类的书，其实也有很好的，但是以情感较多，虽然很扣人心弦，可是总是没有以数据支撑的书来的真实。这是最近的感受。</p><h3 id="时间"><a class="markdownIt-Anchor" href="#时间"></a> 时间</h3><p>当专注在一件事情上时，时间就会变得不够用，也没那么多负面情绪了。负面情绪只是自己控制不住自己的一种表现，当一个人真的做到控制自己的身体和思想的时候，就非常有力量。</p><h3 id="金钱"><a class="markdownIt-Anchor" href="#金钱"></a> 金钱</h3><p>希望我能赚更多钱哈哈。<br />做事情目的很重要，赚钱的目的也很重要，赚了钱之后呢，就是为了过更好的生活，把钱当做工具或者手段看待，更好的生活才是目的。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;睡觉&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#睡觉&quot;&gt;&lt;/a&gt; 睡觉&lt;/h3&gt;
-&lt;p&gt;最近作息时间正常了，每天睡得很早，醒来后也很有精神，真是舒服的状态，我很喜欢规律的感觉。&lt;br /&gt;
-由于疫情的原因，有好几个月没有跑步了，跑一</summary>
-      
-    
-    
-    
-    <category term="生活" scheme="https://sonderss.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-    <category term="生活" scheme="https://sonderss.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
-    
-    <category term="金钱" scheme="https://sonderss.github.io/tags/%E9%87%91%E9%92%B1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>esp32蓝牙控制LED灯</title>
-    <link href="https://sonderss.github.io/2022/06/21/esp32%E8%93%9D%E7%89%99%E6%8E%A7%E5%88%B6LED%E7%81%AF/"/>
-    <id>https://sonderss.github.io/2022/06/21/esp32%E8%93%9D%E7%89%99%E6%8E%A7%E5%88%B6LED%E7%81%AF/</id>
-    <published>2022-06-21T12:44:53.000Z</published>
-    <updated>2022-08-10T07:05:45.129Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>前几个月买了esp32，想实现通过蓝牙来控制led灯，但是工作和琐碎的生活导致没时间也没精力去做，今天终于花时间实现了，记录一下</p></blockquote><h4>材料准备</h4> <ul><li>esp32开发板</li><li>杜邦线若干</li><li>LED灯<br />通过淘宝购买，一共应该不超过30元，其中开发板16元，杜邦线几元钱，LED灯也是几元钱，可以说非常便宜<br /><br /></li></ul><p><b>ESP32简单介绍</b><br /><br />ESP32 性能稳定，具有低耗特性，而且带有wifi和蓝牙模块，可以说这个价格下非常好了。<br /><br /><a class="link"   href="https://blog.csdn.net/Better_man1/article/details/124249742" >ESP32的硬件介绍<i class="fas fa-external-link-alt"></i></a><br /><br />这里贴一下乐鑫的<a class="link"     href="https://www.espressif.com.cn/zh-hans/products/socs/esp32" >官网<i class="fas fa-external-link-alt"></i></a></p><p><b>开发环境准备</b><br /></p><ol><li>安装VS code, 然后安装Espressif IDF和PlatformIO IDE插件</li><li>创建项目，选择ESP32的模块<br /></li></ol><p>具体这里不在详细描述，可参考网上的视频教程关键词：Vscode+Esp32<br /></p><p><b>代码编写</b></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;Arduino.h&gt;</span><br><span class="line">#include &lt;BluetoothSerial.h&gt;</span><br><span class="line">BluetoothSerial SerialBT;</span><br><span class="line"></span><br><span class="line">int state = 0;</span><br><span class="line">int RGB_Blue = 2;</span><br><span class="line">int RGB_RED = 4;</span><br><span class="line">int RGB_GREEN = 15;</span><br><span class="line"></span><br><span class="line">void setup()</span><br><span class="line">&#123;</span><br><span class="line">  Serial.begin(115200);</span><br><span class="line">  // BLEDevice::init(&quot;ESP32BLE&quot;);</span><br><span class="line">  SerialBT.begin(&quot;SONDER_xiaomi&quot;); // 如果没有参数传入则默认是蓝牙名称是: &quot;ESP32&quot;</span><br><span class="line">  SerialBT.setPin(&quot;1234&quot;);         // 蓝牙连接的配对码</span><br><span class="line">  Serial.printf(&quot;BT initial ok and ready to pair. \r\n&quot;);</span><br><span class="line">  pinMode(RGB_RED, OUTPUT);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void loop()</span><br><span class="line">&#123;</span><br><span class="line">  if (Serial.available())</span><br><span class="line">  &#123;</span><br><span class="line">    SerialBT.write(Serial.read());</span><br><span class="line">  &#125;</span><br><span class="line">  if (SerialBT.available())</span><br><span class="line">  &#123;</span><br><span class="line">    state = SerialBT.read();</span><br><span class="line">    if (state == &#x27;1&#x27;)</span><br><span class="line">    &#123;</span><br><span class="line">      Serial.printf(&quot;flash light \r\n&quot;);</span><br><span class="line">      digitalWrite(RGB_RED, HIGH);</span><br><span class="line">      delay(1000); </span><br><span class="line">      digitalWrite(RGB_RED, LOW);  </span><br><span class="line">      delay(1000);</span><br><span class="line">    &#125;</span><br><span class="line">    if (state == &#x27;2&#x27;)</span><br><span class="line">    &#123;</span><br><span class="line">      Serial.printf(&quot;turn on \r\n&quot;);</span><br><span class="line">      digitalWrite(RGB_RED, HIGH); </span><br><span class="line">    &#125;</span><br><span class="line">    if (state == &#x27;0&#x27;)</span><br><span class="line">    &#123;</span><br><span class="line">      Serial.printf(&quot;turn off \r\n&quot;);</span><br><span class="line">      digitalWrite(RGB_RED, LOW);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  delay(1);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br />以上就是控制LED灯的逻辑代码<br /><br /><b>踩的坑</b><br />  1.  波特率的设置<br />  2.  蓝牙的调试<br /><br />总之就是一步一错，摸着石头过河，不过好歹算是实现了 <br /><br /><b>遗留问题</b><br />  1.  串口的中文乱码<br />  2.  小程序蓝牙搜索不到（已解决）<br /><br />这些遗留问题暂时没得到解决，等之后会再研究做补充<br /><p>本人不是做嵌入式开发，所以过程极其缓慢，这里的记录仅做参考，其实主要是自己想记录一下，细节部分懒得写了。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;前几个月买了esp32，想实现通过蓝牙来控制led灯，但是工作和琐碎的生活导致没时间也没精力去做，今天终于花时间实现了，记录一下&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h4&gt;材料准备&lt;/h4&gt; 
-&lt;ul&gt;
-&lt;li&gt;esp32开发板&lt;/li&gt;
-&lt;li</summary>
-      
-    
-    
-    
-    <category term="学习" scheme="https://sonderss.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="esp32" scheme="https://sonderss.github.io/tags/esp32/"/>
-    
-    <category term="蓝牙" scheme="https://sonderss.github.io/tags/%E8%93%9D%E7%89%99/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>乌巢禅师《多心经》</title>
-    <link href="https://sonderss.github.io/2022/01/14/%E4%B9%8C%E5%B7%A2%E7%A6%85%E5%B8%88%E3%80%8A%E5%A4%9A%E5%BF%83%E7%BB%8F%E3%80%8B/"/>
-    <id>https://sonderss.github.io/2022/01/14/%E4%B9%8C%E5%B7%A2%E7%A6%85%E5%B8%88%E3%80%8A%E5%A4%9A%E5%BF%83%E7%BB%8F%E3%80%8B/</id>
-    <published>2022-01-14T03:23:01.000Z</published>
-    <updated>2022-08-11T02:55:35.494Z</updated>
-    
-    <content type="html"><![CDATA[<p>观自在菩萨，行深般若波罗蜜多时，照见五蕴皆空，度一切苦厄。<br />舍利子，色不异空，空不异色，色即是空，空即是色，受想行识，亦复如是。<br />舍利子，是诸法空相，不生不灭，不垢不净，不增不减,，是故空中无色，无受想行识，无眼耳鼻舌身意，无色声香味触法，无眼界，乃至无意识界。<br />无无明，亦无无明尽，乃至无老死，亦无老死尽。无苦集灭道，无智亦无得。以无所得故，菩提萨埵，依般若波罗蜜多故，心无挂碍。<br />无挂碍故，无有恐怖，远离颠倒梦想，究竟涅槃。<br />三世诸佛，依般若波罗蜜多故，得阿耨多罗三藐三菩提，故知般若波罗蜜多，是大神咒，是大明咒，是无上咒，是无等等咒，能除一切苦，真实不虚。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;观自在菩萨，行深般若波罗蜜多时，照见五蕴皆空，度一切苦厄。&lt;br /&gt;
-舍利子，色不异空，空不异色，色即是空，空即是色，受想行识，亦复如是。&lt;br /&gt;
-舍利子，是诸法空相，不生不灭，不垢不净，不增不减,，是故空中无色，无受想行识，无眼耳鼻舌身意，无色声香味触法，无眼界，乃</summary>
-      
-    
-    
-    
-    <category term="自言自语" scheme="https://sonderss.github.io/categories/%E8%87%AA%E8%A8%80%E8%87%AA%E8%AF%AD/"/>
-    
-    
-    <category term="多心经" scheme="https://sonderss.github.io/tags/%E5%A4%9A%E5%BF%83%E7%BB%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>自卑</title>
-    <link href="https://sonderss.github.io/2022/01/13/%E8%87%AA%E5%8D%91/"/>
-    <id>https://sonderss.github.io/2022/01/13/%E8%87%AA%E5%8D%91/</id>
-    <published>2022-01-13T03:15:02.000Z</published>
-    <updated>2022-08-11T02:56:56.812Z</updated>
-    
-    <content type="html"><![CDATA[<p>我有那么不堪吗？为何如此自卑？</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;我有那么不堪吗？为何如此自卑？&lt;/p&gt;
-</summary>
-      
-    
-    
-    
-    <category term="自言自语" scheme="https://sonderss.github.io/categories/%E8%87%AA%E8%A8%80%E8%87%AA%E8%AF%AD/"/>
-    
-    
-    <category term="自卑" scheme="https://sonderss.github.io/tags/%E8%87%AA%E5%8D%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2022年1月12日</title>
-    <link href="https://sonderss.github.io/2022/01/12/2022%E5%B9%B41%E6%9C%8812%E6%97%A5/"/>
-    <id>https://sonderss.github.io/2022/01/12/2022%E5%B9%B41%E6%9C%8812%E6%97%A5/</id>
-    <published>2022-01-12T03:14:53.000Z</published>
-    <updated>2022-08-11T02:56:22.363Z</updated>
-    
-    <content type="html"><![CDATA[<p>心烦意乱</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;心烦意乱&lt;/p&gt;
-</summary>
-      
-    
-    
-    
-    <category term="自言自语" scheme="https://sonderss.github.io/categories/%E8%87%AA%E8%A8%80%E8%87%AA%E8%AF%AD/"/>
-    
-    
-    <category term="自言自语" scheme="https://sonderss.github.io/tags/%E8%87%AA%E8%A8%80%E8%87%AA%E8%AF%AD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>jr-qrcode将文本生成base64二维码</title>
-    <link href="https://sonderss.github.io/2022/01/07/jr-qrcode%E5%B0%86%E6%96%87%E6%9C%AC%E7%94%9F%E6%88%90base64%E4%BA%8C%E7%BB%B4%E7%A0%81/"/>
-    <id>https://sonderss.github.io/2022/01/07/jr-qrcode%E5%B0%86%E6%96%87%E6%9C%AC%E7%94%9F%E6%88%90base64%E4%BA%8C%E7%BB%B4%E7%A0%81/</id>
-    <published>2022-01-07T06:01:14.000Z</published>
-    <updated>2022-08-10T07:04:49.272Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>在打印标签时，需要生成二维码，这个需求是先将文本生成二维码且要有一个图片地址，base64，所以找到了这个插件</p></blockquote><ul><li>所传入的值必须是字符串形式，不然不能扫码成功</li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var jrQrcode = require(&#x27;jr-qrcode&#x27;);</span><br><span class="line">var imgBase64 = jrQrcode.getQrBase64(&#x27;hello world&#x27;);</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;在打印标签时，需要生成二维码，这个需求是先将文本生成二维码且要有一个图片地址，base64，所以找到了这个插件&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;所传入的值必须是字符串形式，不然不能扫码成功&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure</summary>
-      
-    
-    
-    
-    <category term="学习" scheme="https://sonderss.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="二维码" scheme="https://sonderss.github.io/tags/%E4%BA%8C%E7%BB%B4%E7%A0%81/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>html打印小票的总结</title>
-    <link href="https://sonderss.github.io/2022/01/06/html%E6%89%93%E5%8D%B0%E5%B0%8F%E7%A5%A8%E7%9A%84%E6%80%BB%E7%BB%93/"/>
-    <id>https://sonderss.github.io/2022/01/06/html%E6%89%93%E5%8D%B0%E5%B0%8F%E7%A5%A8%E7%9A%84%E6%80%BB%E7%BB%93/</id>
-    <published>2022-01-06T09:52:49.000Z</published>
-    <updated>2022-08-10T07:04:03.457Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="html打印小票的总结"><a class="markdownIt-Anchor" href="#html打印小票的总结"></a> html打印小票的总结</h3><blockquote><p>这个打印的问题困扰了两天，最开始是通过html2canvas，但是转成的图片模糊，一直得不到好的解决，于是放弃了这种思路。改用系统的打印，于是一切变得简单了，但是又出现了新的问题，就是无法控制打印的字体，在无计可施之时，随手改宽度打了两个小票，发现居然字体变小了！又改了两次发现宽度的值越大，打印到纸上的字体大小就越小，这就解决了无法控制打印字体大小的问题</p></blockquote><p>首先写一下html模板</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">// 这里多加一层div是因为dom树中没有父级，都可以</span><br><span class="line">        &lt;div class=&quot;main&quot; id=&quot;main&quot;&gt;</span><br><span class="line">            &lt;div class=&quot;name&quot;&gt;入库日期：2021-01-05&lt;/div&gt;</span><br><span class="line">            &lt;div class=&quot;name&quot;&gt;品牌：雅培&lt;/div&gt;</span><br><span class="line">            &lt;div class=&quot;name&quot;&gt;效期：2021-01-05&lt;/div&gt;</span><br><span class="line">            &lt;div class=&quot;name&quot;&gt;物料编码：测试物料编码&lt;/div&gt;</span><br><span class="line">            &lt;div class=&quot;name&quot;&gt; 批号：4445551122666 &lt;/div&gt;</span><br><span class="line">            &lt;div class=&quot;name&quot;&gt;名称：测试物料222&lt;/div&gt;</span><br><span class="line">            &lt;div class=&quot;name&quot;&gt;原厂编码：8584546654654&lt;/div&gt;</span><br><span class="line">            &lt;div class=&quot;name&quot;&gt;规格：测试无力哦奥委屈额群无&lt;/div&gt;</span><br><span class="line">            &lt;div class=&quot;code&quot;&gt;</span><br><span class="line">                &lt;img width=&quot;50&quot; height=&quot;50&quot; src=&quot;https://s2.loli.net/2022/01/06/hF8mtpvz4YjIiE1.png&quot; /&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br></pre></td></tr></table></figure><p>设置一下样式表</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">.main &#123;</span><br><span class="line">          /* width设置越宽，最终打印到纸上的字体越小 */</span><br><span class="line">          width: 260px;</span><br><span class="line">          height: 113px;</span><br><span class="line">          position: relative;</span><br><span class="line">          display: flex;</span><br><span class="line">          flex-direction: column;</span><br><span class="line">          padding: 5px;</span><br><span class="line">          box-sizing: border-box;</span><br><span class="line">          font-size: 6px;</span><br><span class="line">          padding-left: 20px;</span><br><span class="line">      &#125;</span><br><span class="line">      .name &#123;</span><br><span class="line">          width: 180px;</span><br><span class="line">          height: 16px;</span><br><span class="line">          font-size: 6px;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      html,</span><br><span class="line">      body &#123;</span><br><span class="line">          font-size: 6px;</span><br><span class="line">          margin: 0;</span><br><span class="line">          padding: 0;</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;html打印小票的总结&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#html打印小票的总结&quot;&gt;&lt;/a&gt; html打印小票的总结&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;这个打印的问题困扰了两天，最开始是通过html2canvas，但</summary>
-      
-    
-    
-    
-    <category term="学习" scheme="https://sonderss.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="打印" scheme="https://sonderss.github.io/tags/%E6%89%93%E5%8D%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>一次花销</title>
-    <link href="https://sonderss.github.io/2022/01/04/%E4%B8%80%E6%AC%A1%E8%8A%B1%E9%94%80/"/>
-    <id>https://sonderss.github.io/2022/01/04/%E4%B8%80%E6%AC%A1%E8%8A%B1%E9%94%80/</id>
-    <published>2022-01-04T08:57:25.000Z</published>
-    <updated>2022-08-11T02:40:53.182Z</updated>
-    
-    <content type="html"><![CDATA[<ul><li>给小妹买电脑花了6700</li><li>还花呗9970</li></ul><p>肉疼</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;ul&gt;
-&lt;li&gt;给小妹买电脑花了6700&lt;/li&gt;
-&lt;li&gt;还花呗9970&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;肉疼&lt;/p&gt;
-</summary>
-      
-    
-    
-    
-    <category term="生活" scheme="https://sonderss.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-    <category term="赚钱真难" scheme="https://sonderss.github.io/tags/%E8%B5%9A%E9%92%B1%E7%9C%9F%E9%9A%BE/"/>
     
   </entry>
   

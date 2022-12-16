@@ -81,6 +81,7 @@
 .markdown-body h6 {
   color: var(--second-text-color);
   line-height: 1.5;
+  margin-bottom: 10px;
 keep-tablet()
 }
 .markdown-body h1 {

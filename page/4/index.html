@@ -21,7 +21,7 @@
   <script id="hexo-configurations">
     let KEEP = window.KEEP || {};
     KEEP.hexo_config = {"hostname":"sonderss.github.io","root":"/","language":"zh-CN","path":"search.xml"};
-    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"skyblue","avatar":"https://vkceyugu.cdn.bspapp.com/VKCEYUGU-7f44bce3-7312-42a7-9492-30e87da8db11/3b7b3896-f930-4096-99f7-bcdc29dc7796.jpg","favicon":"https://vkceyugu.cdn.bspapp.com/VKCEYUGU-7f44bce3-7312-42a7-9492-30e87da8db11/3b7b3896-f930-4096-99f7-bcdc29dc7796.jpg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"放弃幻想，轻装前行"},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"3.4.5"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#42b983","avatar":"https://vkceyugu.cdn.bspapp.com/VKCEYUGU-7f44bce3-7312-42a7-9492-30e87da8db11/3b7b3896-f930-4096-99f7-bcdc29dc7796.jpg","favicon":"https://vkceyugu.cdn.bspapp.com/VKCEYUGU-7f44bce3-7312-42a7-9492-30e87da8db11/3b7b3896-f930-4096-99f7-bcdc29dc7796.jpg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"放弃幻想，轻装前行"},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"3.4.5"};
     KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
   </script>
 <meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="sonders" type="application/atom+xml">
@@ -183,6 +183,532 @@
                 
 
                 <h3 class="home-article-title">
+                    <a href="/2022/01/04/Vue3%E7%9A%84%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97/">
+                        Vue3的使用心得
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                         Vue3的使用心得
+
+代码层面最直接的感受是没有了this的使用，定义响应式数据在reactive中，最后return出去即可。另外一个就是TS在其中的应用，例如参数烈类型，变量类型，函数返回值等
+
+ ref
+1const num = ref(0)...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Tue Jan 04 2022 10:13:38 GMT+0800">2022-01-04</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/vue3/">vue3</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2022/01/04/Vue3%E7%9A%84%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2021/12/29/Vite%E6%89%93%E5%8C%85%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AD%90%E7%9B%AE%E5%BD%95%E7%9A%84%E9%85%8D%E7%BD%AE/">
+                        Vite打包部署服务器子目录的配置
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        在package.json中配置打包 --base=/自己的目录/
+12&quot;build&quot;: &quot;vite build --mode production  --base=/static/agingwarnings/&quot...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Wed Dec 29 2021 14:49:43 GMT+0800">2021-12-29</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/vite/">vite</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2021/12/29/Vite%E6%89%93%E5%8C%85%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AD%90%E7%9B%AE%E5%BD%95%E7%9A%84%E9%85%8D%E7%BD%AE/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2021/12/27/%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E4%B8%AD%E4%BD%BF%E7%94%A8Vue3-TS-Vite/">
+                        生产环境中使用Vue3+TS+Vite
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                         在生产环境中使用Vue3+TS+Vite
+
+最近在新的项目中使用了Vue3，也是第一次在生产环境中使用Vue3做项目，很像写React但比React写起来舒服
+
+
+没有了this的使用
+根据TS定义接口，编写类型，在编译过程中就能避免低级错误，代码...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Mon Dec 27 2021 14:22:49 GMT+0800">2021-12-27</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/vite/">vite</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/vue3/">vue3</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/ts/">ts</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2021/12/27/%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E4%B8%AD%E4%BD%BF%E7%94%A8Vue3-TS-Vite/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2021/12/24/%E4%B8%B4%E8%BF%91%E8%BF%87%E5%B9%B4%E7%9A%84%E4%B8%80%E4%BA%9B%E7%84%A6%E8%99%91/">
+                        临近过年的一些焦虑
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        
+如何与一年没有见面的家里人说话，且显得不那么陌生
+家里人都是互相比较的，对我而言不喜欢这样的内耗，该如何巧妙回避
+问及我的收入，我该如何处理，坦诚的告诉还是直接拒绝讨论
+相亲的时候如何技巧性的给人留下好的印象
+观念不一致是继续坦诚讨论还是附和
+
+
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Fri Dec 24 2021 16:33:02 GMT+0800">2021-12-24</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/%E8%87%AA%E8%A8%80%E8%87%AA%E8%AF%AD/">自言自语</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E9%9A%8F%E6%83%B3/">随想</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2021/12/24/%E4%B8%B4%E8%BF%91%E8%BF%87%E5%B9%B4%E7%9A%84%E4%B8%80%E4%BA%9B%E7%84%A6%E8%99%91/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2021/12/21/%E6%9C%80%E8%BF%91%E5%87%A0%E4%B8%AA%E6%9C%88%E7%9A%84%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/">
+                        最近几个月的生活状态
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        8点40出门，（走路加公交加地铁一个小时二十分钟左右通勤）
+9点五十吃完早饭
+十点开始工作
+十一点半吃饭
+十二点午觉或者看小说
+一点开始工作
+六点多下班卷（/一会儿）
+九点吃晚饭
+十点洗漱完上床看小说玩手机
+十二点关掉手机预备睡觉
+凌晨二点半左右开始...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Tue Dec 21 2021 12:40:05 GMT+0800">2021-12-21</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/%E7%94%9F%E6%B4%BB/">生活</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E7%8A%B6%E6%80%81/">状态</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2021/12/21/%E6%9C%80%E8%BF%91%E5%87%A0%E4%B8%AA%E6%9C%88%E7%9A%84%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2021/12/16/2021%E5%B9%B412%E6%9C%8816%E6%97%A5/">
+                        2021年12月16日
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        想起刚毕业在上海前几个月，那天我坐在出租屋里—阳光透过很小的玻璃洒进来，我脑海里想到的是，再也不会有人和我一起努力了。
+我很清醒的明白这一切，可我没有办法改变它。
+
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Thu Dec 16 2021 13:53:33 GMT+0800">2021-12-16</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/%E7%94%9F%E6%B4%BB/">生活</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E7%AB%99%E5%9C%A8%E7%AC%AC%E4%B8%89%E4%BA%BA%E7%A7%B0%E8%A7%86%E8%A7%92%E5%9B%9E%E5%88%B0%E8%BF%87%E5%8E%BB%E7%9C%8B%E8%87%AA%E5%B7%B1/">站在第三人称视角回到过去看自己</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2021/12/16/2021%E5%B9%B412%E6%9C%8816%E6%97%A5/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2021/12/09/%E9%AB%98%E6%95%88%E4%BD%BF%E7%94%A8scss%E7%BC%96%E5%86%99%E6%A0%B7%E5%BC%8F%E8%A1%A8/">
+                        高效使用scss编写样式表
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        使用scss的一些技巧学习
+官网地址：https://www.sass.hk/
+1234567891011121314// ====== 字体大小 ======@for $i from 12 through 30 &#123;    .f#&#123...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Thu Dec 09 2021 17:45:25 GMT+0800">2021-12-09</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/scss/">scss</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2021/12/09/%E9%AB%98%E6%95%88%E4%BD%BF%E7%94%A8scss%E7%BC%96%E5%86%99%E6%A0%B7%E5%BC%8F%E8%A1%A8/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2021/12/09/Vue3%E4%B8%AD%E4%BD%BF%E7%94%A8Vuex%E5%B0%8F%E8%AE%B0/">
+                        Vue3中使用Vuex小记
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        
+最近在Vue3项目中使用Vuex和axios-mapper，与之前稍有不同，参考了Github的代码，在这里记录一下。
+
+1npm i vuex@next // 安装
+创建一个store目录，创建一个ts文件来封装处理vuex
+1234567891...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Thu Dec 09 2021 17:40:23 GMT+0800">2021-12-09</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/vue3/">vue3</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/vuex/">vuex</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2021/12/09/Vue3%E4%B8%AD%E4%BD%BF%E7%94%A8Vuex%E5%B0%8F%E8%AE%B0/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2021/12/09/Vue3%E4%B8%AD%E4%BD%BF%E7%94%A8axios%E5%B0%8F%E8%AE%B0/">
+                        Vue3中使用axios小记
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        
+最近在Vue3项目中使用Vuex和axios-mapper，与之前稍有不同，参考了Github的代码，在这里记录一下。
+
+1npm i axios-mapper  // 安装
+创建一个api目录，创建一个ts文件来封装处理axios
+1234567...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Thu Dec 09 2021 17:29:20 GMT+0800">2021-12-09</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/axios-mapper/">axios-mapper</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2021/12/09/Vue3%E4%B8%AD%E4%BD%BF%E7%94%A8axios%E5%B0%8F%E8%AE%B0/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
                     <a href="/2021/12/06/2021%E5%B9%B412%E6%9C%886%E6%97%A5/">
                         2021年12月6日
                     </a>
@@ -228,521 +754,6 @@
     </div>
 
     <a href="/2021/12/06/2021%E5%B9%B412%E6%9C%886%E6%97%A5/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2021/10/28/Vscode%E6%90%AD%E5%BB%BAESP32%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/">
-                        Vscode搭建ESP32开发环境
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        
-最近打算学一下ESP32开发，开发环境使用Vs Code
-
-安装插件 PlatformIO IDE （过程中可能会要求按照python, C++相关文件）
-耐心安装就行了，我是在安装过程中遇到python的问题，一直失败，于手动下载安装了pytho...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Thu Oct 28 2021 10:55:17 GMT+0800">2021-10-28</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>&nbsp;
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fas fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/">单片机</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
-                            <a href="/tags/ESP32/">ESP32</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/2021/10/28/Vscode%E6%90%AD%E5%BB%BAESP32%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2021/08/10/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E5%B0%8F%E7%89%9B%E7%BB%83%E8%8B%B1%E8%AF%AD/">
-                        微信小程序--小牛练英语
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        😊
-
-微信搜索“小牛练英语”，即可开启学习英语之旅
-
-优势
-
-海量题库练不停
-错题本–记录每一道错题，巩固练习
-做题记录–记录每次的做题记录，进步一目了然
-学习证书–根据你的做题记录生成证书
-特权标识–获取更多VIP特权
-
-👏👏👏
-
-
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Tue Aug 10 2021 17:03:25 GMT+0800">2021-08-10</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/%E9%A1%B9%E7%9B%AE/">项目</a>&nbsp;
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fas fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">小程序</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
-                            <a href="/tags/%E8%8B%B1%E8%AF%AD/">英语</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/2021/08/10/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E5%B0%8F%E7%89%9B%E7%BB%83%E8%8B%B1%E8%AF%AD/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2021/06/05/%E6%9D%A5%E6%9C%BA%E5%9C%BA%E6%9D%A5%E6%97%A9%E4%BA%86/">
-                        来机场来早了
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        为了赶飞机起个大早，看着时间，结果还是来早了，等航班真不舒服
-
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sat Jun 05 2021 07:15:14 GMT+0800">2021-06-05</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/%E8%87%AA%E8%A8%80%E8%87%AA%E8%AF%AD/">自言自语</a>&nbsp;
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fas fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/%E9%A3%9E%E6%9C%BA/">飞机</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/2021/06/05/%E6%9D%A5%E6%9C%BA%E5%9C%BA%E6%9D%A5%E6%97%A9%E4%BA%86/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2021/06/02/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E8%87%AA%E5%B7%B1%E7%9A%84%E7%94%9F%E5%91%BD%E4%B9%8B%E8%BD%AE/">
-                        记录一次自己的生命之轮
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        
-从这个结果来看个人生活太烂了，每天只有上下班的生活，希望以后能有改变吧
-
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Wed Jun 02 2021 09:44:09 GMT+0800">2021-06-02</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/%E7%94%9F%E6%B4%BB/">生活</a>&nbsp;
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fas fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/%E7%94%9F%E5%91%BD%E4%B9%8B%E8%BD%AE/">生命之轮</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/2021/06/02/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E8%87%AA%E5%B7%B1%E7%9A%84%E7%94%9F%E5%91%BD%E4%B9%8B%E8%BD%AE/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2021/06/01/%E6%9C%80%E8%BF%91%E7%9A%84%E7%94%9F%E6%B4%BB%E6%84%9F%E6%82%9F/">
-                        最近的生活感悟
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        🌱 生活感悟
-如果没有自己的兴趣爱好，生活将变的很空洞，如果可以专注于一件事情，并且付出时间去做，那么会活的更加自由，更专注于自己的提升，而可以不被琐事所困扰，也不会庸人自扰
-
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Tue Jun 01 2021 15:00:05 GMT+0800">2021-06-01</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/%E7%94%9F%E6%B4%BB/">生活</a>&nbsp;
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fas fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/%E6%84%9F%E6%82%9F/">感悟</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/2021/06/01/%E6%9C%80%E8%BF%91%E7%9A%84%E7%94%9F%E6%B4%BB%E6%84%9F%E6%82%9F/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2021/05/05/2021%E5%B9%B45%E6%9C%885%E6%97%A5/">
-                        2021年5月5日
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        五一劳动节回了家，这是毕业后第一次夏天在家，很舒3服。
-和兄弟几个在县城吃了饭喝了酒，感受到了美好的生活节奏，生活就该如此啊!
-此刻回到了上海，感觉像是重生一样，我又活过来了，双相障碍Ⅱ型症状好像在减少了，这次回家对我来讲太治愈了
-
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Wed May 05 2021 23:40:26 GMT+0800">2021-05-05</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/%E7%94%9F%E6%B4%BB/">生活</a>&nbsp;
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fas fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/%E8%88%92%E6%9C%8D/">舒服</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
-                            <a href="/tags/%E7%BE%8E%E5%A5%BD/">美好</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/2021/05/05/2021%E5%B9%B45%E6%9C%885%E6%97%A5/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2021/04/30/%E6%80%A7%E6%A0%BC%E7%BC%BA%E9%99%B7%E6%98%AF%E5%A4%A9%E7%94%9F%E7%9A%84%E5%90%97/">
-                        性格缺陷是天生的吗
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        感觉自己只有在写代码的时候可以心无旁骛，可以开心。其他时候都很难和别人正常交流，总觉得话不知如何说，很难受，这是性格缺陷吗，还能改吗
-
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Fri Apr 30 2021 19:56:47 GMT+0800">2021-04-30</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/%E8%87%AA%E8%A8%80%E8%87%AA%E8%AF%AD/">自言自语</a>&nbsp;
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fas fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/%E8%87%AA%E8%A8%80%E8%87%AA%E8%AF%AD/">自言自语</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/2021/04/30/%E6%80%A7%E6%A0%BC%E7%BC%BA%E9%99%B7%E6%98%AF%E5%A4%A9%E7%94%9F%E7%9A%84%E5%90%97/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2021/04/29/%E5%A5%BD%E5%83%8F%E7%94%9F%E7%97%85%E4%BA%86/">
-                        好像生病了
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        从三月份不知道哪天开始，总是陷入对过去的沉思中，甚至能想起过去好几年前说某句话的语气，甚至以第三视角审视着当时那个空间的我，然后开始崩溃，吃饭时崩溃强忍住眼泪，走路时崩溃强忍住眼泪，地铁上崩溃强忍住眼泪，回去后关上门开始失声痛哭
-本以为过去了这些时间...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Thu Apr 29 2021 12:13:32 GMT+0800">2021-04-29</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/%E8%87%AA%E8%A8%80%E8%87%AA%E8%AF%AD/">自言自语</a>&nbsp;
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fas fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/%E7%94%9F%E7%97%85/">生病</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/2021/04/29/%E5%A5%BD%E5%83%8F%E7%94%9F%E7%97%85%E4%BA%86/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2021/03/31/%E5%83%8F%E4%B8%AA%E5%AD%A9%E5%AD%90/">
-                        像个孩子
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        汪峰的歌好听。
-像个孩子
-为什么记忆那么清楚
-为什么
-
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Wed Mar 31 2021 01:03:33 GMT+0800">2021-03-31</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/%E7%94%9F%E6%B4%BB/">生活</a>&nbsp;
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fas fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/%E6%B7%B1%E5%A4%9C/">深夜</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/2021/03/31/%E5%83%8F%E4%B8%AA%E5%AD%A9%E5%AD%90/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
