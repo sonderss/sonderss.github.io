@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="keywords" content="sonder个人博客, sonder, sonders, 曹">
+  <meta name="description" content="sonder个人博客">
+  <meta name="author" content="sonder">
+  <link href="https://cdn.bootcss.com/KaTeX/0.7.1/katex.min.css" rel="stylesheet">
+
+  
+  <title>
+    
+    IM集成 |
+    
+    Sonder
+  </title>
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <link rel="shortcut icon" href="https://mp-8461e617-a7bd-46e2-9cfc-31a93d116962.cdn.bspapp.com/cloudstorage/ae7548cb-db9c-4e3c-be8f-e9e5d99ec2db.png">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css">
+  <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"sonderss.github.io","root":"/","language":"zh-CN","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#42b983","avatar":"https://mp-8461e617-a7bd-46e2-9cfc-31a93d116962.cdn.bspapp.com/cloudstorage/ae7548cb-db9c-4e3c-be8f-e9e5d99ec2db.png","favicon":"https://mp-8461e617-a7bd-46e2-9cfc-31a93d116962.cdn.bspapp.com/cloudstorage/ae7548cb-db9c-4e3c-be8f-e9e5d99ec2db.png","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"放弃幻想，轻装前行"},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="sonders" type="application/atom+xml">
+</head>
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Sonder
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/gallery"
+                            >
+                                相册
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/gallery">相册</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+  <div class="article-content-container">
+
+    <div class="article-title">
+      <span class="title-hover-animation">IM集成</span>
+    </div>
+    
+    <div class="article-header">
+      <div class="avatar">
+        <img src="https://mp-8461e617-a7bd-46e2-9cfc-31a93d116962.cdn.bspapp.com/cloudstorage/ae7548cb-db9c-4e3c-be8f-e9e5d99ec2db.png">
+      </div>
+      <div class="info">
+        <div class="author">
+          <span class="name">sonder</span>
+
+          
+          <!-- 改动 -->
+          
+          
+          <span
+            class="author-label">超大杯</span>
+          
+          <!-- 改动 -->
+          
+        </div>
+
+        <div class="meta-info">
+          <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-09-05 16:49:01</span>
+        <span class="mobile">2022-09-05 16:49</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/IM/">IM</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>1.3k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>5 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+        </div>
+      </div>
+    </div>
+    
+
+
+    <!-- 
+    <div class="article-header">
+      <div class="avatar">
+        <img src="https://mp-8461e617-a7bd-46e2-9cfc-31a93d116962.cdn.bspapp.com/cloudstorage/ae7548cb-db9c-4e3c-be8f-e9e5d99ec2db.png">
+      </div>
+      <div class="info">
+        <div class="author">
+          <span class="name">sonder</span>
+          
+          <span
+            class="author-label"></span>
+          
+        </div>
+        <div class="meta-info">
+          <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-09-05 16:49:01</span>
+        <span class="mobile">2022-09-05 16:49</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/IM/">IM</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>1.3k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>5 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+        </div>
+      </div>
+    </div>
+     -->
+
+    <div class="article-content markdown-body">
+      <h3 id="融云-im-集成"><a class="markdownIt-Anchor" href="#融云-im-集成"></a> 融云 IM 集成</h3>
+<blockquote>
+<p>融云即时通讯产品支持单聊、群聊、超级群、聊天室 多种业务形态，提供丰富的客户端和服务端接口，大部分能力支持开箱即用。</p>
+</blockquote>
+<p>融云的架构设计特点：</p>
+<ul>
+<li>无需改变现有 App 的架构，直接嵌入现有代码框架中；</li>
+<li>无需改变现有 App Server 的架构，独立部署一份用于用户授权的 Service 即可；</li>
+<li>专注于提供通讯能力，使用私有的二进制通信协议，消息轻量、有序、不丢消息；</li>
+<li>安全的身份认证和授权方式，无需担心 SDK 能力滥用（盗用身份的垃圾消息、垃圾群发）问题。</li>
+</ul>
+<h3 id="客户端集成"><a class="markdownIt-Anchor" href="#客户端集成"></a> 客户端集成</h3>
+<h4 id="导入-sdk"><a class="markdownIt-Anchor" href="#导入-sdk"></a> 导入 SDK</h4>
+<p>可以参考官方<a class="link"   target="_blank" rel="noopener" href="https://doc.rongcloud.cn/im/Web/5.X/noui/import" >文档<i class="fas fa-external-link-alt"></i></a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 安装 IM 5.0 最新版本</span></span><br><span class="line">npm install @rongcloud/engine@latest @rongcloud/imlib-next@latest -S</span><br><span class="line"></span><br><span class="line"><span class="comment">// CMD</span></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">RongIMLib</span> = <span class="built_in">require</span>(<span class="string">&#x27;@rongcloud/imlib-next&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// ES</span></span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> <span class="title class_">RongIMLib</span> <span class="keyword">from</span> <span class="string">&#x27;@rongcloud/imlib-next&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// CDN链接</span></span><br><span class="line">&lt;script src=<span class="string">&quot;https://cdn.ronghub.com/RongIMLib-5.3.0.prod.js&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="初始化"><a class="markdownIt-Anchor" href="#初始化"></a> 初始化</h4>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">RongIMLib</span>.<span class="title function_">init</span>(&#123;</span><br><span class="line">  <span class="attr">appkey</span>: <span class="string">&quot;xxxxxx&quot;</span>, <span class="comment">//  这里是在融云控制台申请的应用appkey</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 添加事件监听</span></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">Events</span> = <span class="title class_">RongIMLib</span>.<span class="property">Events</span>;</span><br><span class="line"><span class="title class_">RongIMLib</span>.<span class="title function_">addEventListener</span>(<span class="title class_">Events</span>.<span class="property">CONNECTING</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;正在链接服务器&quot;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="title class_">RongIMLib</span>.<span class="title function_">addEventListener</span>(<span class="title class_">Events</span>.<span class="property">CONNECTED</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;已经链接到服务器&quot;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="title class_">RongIMLib</span>.<span class="title function_">addEventListener</span>(<span class="title class_">Events</span>.<span class="property">MESSAGES</span>, <span class="keyword">function</span> (<span class="params">res</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;接收到消息&quot;</span>, res);</span><br><span class="line">  <span class="comment">// res.messages 这里收到消息后进行展示处理</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="用户连接-im"><a class="markdownIt-Anchor" href="#用户连接-im"></a> 用户连接 IM</h4>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  <span class="comment">// token 用户的token</span></span><br><span class="line">  <span class="title class_">RongIMLib</span>.<span class="title function_">connect</span>(token).<span class="title function_">then</span>(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (res.<span class="property">code</span> === <span class="title class_">RongIMLib</span>.<span class="property">ErrorCode</span>.<span class="property">SUCCESS</span>) &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;链接成功, 链接用户 id 为: &quot;</span>, res.<span class="property">data</span>.<span class="property">userId</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&quot;链接失败, code:&quot;</span>, res.<span class="property">code</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(err);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="发送消息"><a class="markdownIt-Anchor" href="#发送消息"></a> 发送消息</h4>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义消息投送目标会话</span></span><br><span class="line"><span class="keyword">const</span> conversation = &#123;</span><br><span class="line">  <span class="attr">conversationType</span>: <span class="title class_">RongIMLib</span>.<span class="property">ConversationType</span>.<span class="property">PRIVATE</span>,</span><br><span class="line">  <span class="attr">targetId</span>: <span class="string">&quot;userID&quot;</span>, <span class="comment">// 这里是接收人ID</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 发送文本（表情）消息</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">sendTextMsg</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// 实例化待发送消息，RongIMLib.TextMessage 为内置文本型消息</span></span><br><span class="line">  <span class="keyword">const</span> message = <span class="keyword">new</span> <span class="title class_">RongIMLib</span>.<span class="title class_">TextMessage</span>(&#123;</span><br><span class="line">    <span class="attr">content</span>: <span class="string">&quot;这里是发送的文本消息内容&quot;</span>,</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="comment">// 发送</span></span><br><span class="line">  <span class="title class_">RongIMLib</span>.<span class="title function_">sendMessage</span>(conversation, message)</span><br><span class="line">    .<span class="title function_">then</span>(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;发送回调&quot;</span>, res);</span><br><span class="line">      <span class="comment">// 发送成功后展示到对话框中</span></span><br><span class="line">    &#125;)</span><br><span class="line">    .<span class="title function_">catch</span>(<span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(err);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//  发送图片消息</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">sendImgMsg</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// file = &lt;input type=&quot;file&quot; /&gt; 所选的文件信息</span></span><br><span class="line">  <span class="keyword">const</span> msgBody = &#123;</span><br><span class="line">    file, <span class="comment">// 待上传文件</span></span><br><span class="line">    <span class="attr">user</span>: &#123; <span class="attr">id</span>: <span class="string">&quot;&quot;</span>, <span class="attr">name</span>: <span class="string">&quot;&quot;</span>, <span class="attr">portraitUri</span>: <span class="string">&quot;&quot;</span>, <span class="attr">extra</span>: <span class="string">&quot;&quot;</span> &#125;, <span class="comment">// 消息中携带的用户信息，非必填</span></span><br><span class="line">    <span class="attr">extra</span>: <span class="string">&quot;连同图片一起发送的文本&quot;</span>, <span class="comment">// 消息中携带的透传信息，非必填</span></span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">const</span> hooks = &#123;</span><br><span class="line">    <span class="title function_">onProgress</span>(<span class="params">progress</span>) &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;progress&quot;</span>, progress);</span><br><span class="line">    &#125;, <span class="comment">// 上传进度监听，可选</span></span><br><span class="line">    <span class="title function_">onComplete</span>(<span class="params">fileInfo</span>) &#123;</span><br><span class="line">      <span class="comment">// 上传完成时的回调钩子，可选</span></span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(fileInfo.<span class="property">url</span>); <span class="comment">// 文件存储地址 图片cdn链接</span></span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">const</span> options = &#123;</span><br><span class="line">    <span class="attr">contentDisposition</span>: <span class="string">&quot;inline&quot;</span>, <span class="comment">// &#x27;inline&#x27; | &#x27;attachment&#x27; , 使用 aws 上传时返回链接在浏览器中的展示形式</span></span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="title class_">RongIMLib</span>.<span class="title function_">sendImageMessage</span>(conversation, msgBody, hooks, options).<span class="title function_">then</span>(</span><br><span class="line">    <span class="function">(<span class="params">&#123; code, data &#125;</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(data); <span class="comment">// 发送回调结果</span></span><br><span class="line">      <span class="keyword">if</span> (code === <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="comment">// 发送成功 可以展示到对话框的还有消息侧</span></span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;发送成功&quot;</span>);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> <span class="title function_">alert</span>(<span class="string">&quot;图片发送失败&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="自定义消息"><a class="markdownIt-Anchor" href="#自定义消息"></a> 自定义消息</h4>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 注册自定义消息  s:person 自定义</span></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">PersonMessage</span> = <span class="title class_">RongIMLib</span>.<span class="title function_">registerMessageType</span>(</span><br><span class="line">  <span class="string">&quot;s:person&quot;</span>,</span><br><span class="line">  <span class="literal">false</span>,</span><br><span class="line">  <span class="literal">false</span>,</span><br><span class="line">  [],</span><br><span class="line">  <span class="literal">false</span></span><br><span class="line">);</span><br><span class="line"><span class="comment">// 构建要发送的自定义消息</span></span><br><span class="line"><span class="keyword">const</span> message = <span class="keyword">new</span> <span class="title class_">PersonMessage</span>([</span><br><span class="line">  &#123; <span class="attr">desc</span>: <span class="string">&quot;查询订单号&quot;</span>, <span class="attr">orderID</span>: <span class="number">123</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">desc</span>: <span class="string">&quot;查询我是谁&quot;</span>, <span class="attr">orderID</span>: <span class="number">123</span> &#125;,</span><br><span class="line">]);</span><br><span class="line"><span class="comment">// 发送消息</span></span><br><span class="line"><span class="title class_">RongIMLib</span>.<span class="title function_">sendMessage</span>(</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">conversationType</span>: <span class="title class_">RongIMLib</span>.<span class="property">ConversationType</span>.<span class="property">PRIVATE</span>,</span><br><span class="line">    <span class="attr">targetId</span>: <span class="string">&quot;userID&quot;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  message</span><br><span class="line">).<span class="title function_">then</span>(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (res.<span class="property">code</span> === <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(res.<span class="property">code</span>, res.<span class="property">data</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(res.<span class="property">code</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="表情加载"><a class="markdownIt-Anchor" href="#表情加载"></a> 表情加载</h4>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 引入</span></span><br><span class="line">&lt;script src=<span class="string">&quot;https://cdn.ronghub.com/RongEmoji-2.2.10.min.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"> <span class="comment">// 表情信息可参考 http://unicode.org/emoji/charts/full-emoji-list.html</span></span><br><span class="line"><span class="keyword">const</span> config = &#123;</span><br><span class="line">    <span class="attr">size</span>: <span class="number">25</span>,</span><br><span class="line">    <span class="attr">url</span>: <span class="string">&#x27;//f2e.cn.ronghub.com/sdk/emoji-48.png&#x27;</span>,</span><br><span class="line">    <span class="attr">lang</span>: <span class="string">&#x27;en&#x27;</span>,</span><br><span class="line">    <span class="attr">extension</span>: &#123;</span><br><span class="line">        <span class="attr">dataSource</span>: &#123;</span><br><span class="line">            <span class="attr">u1F914</span>: &#123; <span class="comment">// 自定义 u1F914 对应的表情</span></span><br><span class="line">                <span class="attr">en</span>: <span class="string">&#x27;thinking face&#x27;</span>, <span class="comment">// 英文名称</span></span><br><span class="line">                <span class="attr">zh</span>: <span class="string">&#x27;思考&#x27;</span>, <span class="comment">// 中文名称</span></span><br><span class="line">                <span class="attr">tag</span>: <span class="string">&#x27;🤔&#x27;</span>, <span class="comment">// 原生 Emoji</span></span><br><span class="line">                <span class="attr">position</span>: <span class="string">&#x27;0 0&#x27;</span> <span class="comment">// 所在背景图位置坐标</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">url</span>: <span class="string">&#x27;//cdn.ronghub.com/thinking-face.png&#x27;</span> <span class="comment">// 新增 Emoji 背景图 url</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="title class_">RongIMLib</span>.<span class="property">RongIMEmoji</span>.<span class="title function_">init</span>(config);</span><br><span class="line"><span class="comment">// RongIMEmojiList 是表情列表 可展示到view中供选择</span></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">RongIMEmojiList</span> = <span class="title class_">RongIMLib</span>.<span class="property">RongIMEmoji</span>.<span class="property">list</span>;</span><br><span class="line"><span class="comment">// 部分示例</span></span><br><span class="line">😊😭😂💔😑😟🐶🎉📢🤔🌙💤🍦🚀</span><br></pre></td></tr></table></figure>
+<h4 id="关于语音视频通话"><a class="markdownIt-Anchor" href="#关于语音视频通话"></a> 关于语音/视频通话</h4>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 引入一下链接  顺序不变</span></span><br><span class="line">&lt;script src=<span class="string">&quot;https://cdn.ronghub.com/RongIMLib-5.3.0.prod.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"><span class="comment">// RTCLib v5</span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.ronghub.com/RCRTC-5.3.12.prod.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"> <span class="comment">// RongCallLib</span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.ronghub.com/RCCall-5.0.latest.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 当RongIMLib.connect连接成功后，在成功回调中初始化音视频</span></span><br><span class="line"> rtcClient = <span class="title class_">RongIMLib</span>.<span class="title function_">installPlugin</span>(<span class="variable constant_">RCRTC</span>.<span class="property">installer</span>)</span><br><span class="line">    caller = <span class="title class_">RongIMLib</span>.<span class="title function_">installPlugin</span>(<span class="title class_">RCCall</span>.<span class="property">installer</span>, &#123;</span><br><span class="line">        rtcClient,</span><br><span class="line">        <span class="title function_">onSession</span>(<span class="params">session</span>)&#123;</span><br><span class="line">            session.<span class="title function_">registerSessionListener</span>(&#123;</span><br><span class="line">                <span class="comment">// 这里的内容参考开发文档</span></span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 我这里由于业务不需要音视频所以没有深度测试，只是简单测试了下打电话功能，暂时不做仔细记录</span></span><br></pre></td></tr></table></figure>
+<h4 id="展示对话框"><a class="markdownIt-Anchor" href="#展示对话框"></a> 展示对话框</h4>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.statically.io/gh/sonderss/image-hosting@master/1.1n3x6v41v3c0.webp"
+                      alt="1" 
+                ></p>
+<h3 id="结语"><a class="markdownIt-Anchor" href="#结语"></a> 结语</h3>
+<p>本文仅以 WEB 客户端集成做记录，如果是实现聊天对话客服功能，完全够用了。</p>
+
+    </div>
+
+    
+    <div class="post-copyright-info">
+      <div class="article-copyright-info-container">
+  <!--  style="background-color: hexo-config('style.primary_color');" -->
+  <ul>
+    <li>本文标题：IM集成</li>
+    <li>本文作者：sonder</li>
+    <li>创建时间：2022-09-05 16:49:01</li>
+    <li>
+      本文链接：https://sonderss.github.io/2022/09/05/IM集成/
+    </li>
+    <!-- 版权声明：本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！ -->
+    <!-- <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li> -->
+  </ul>
+</div>
+
+    </div>
+    
+
+    
+    <ul class="post-tags-box">
+      
+      <li class="tag-item">
+        <a href="/tags/IM/">#IM</a>&nbsp;
+      </li>
+      
+    </ul>
+    
+
+    
+    <div class="article-nav">
+      
+      <div class="article-prev">
+        <a class="prev" rel="prev" href="/2022/09/06/%E4%B8%AD%E6%96%87%E4%BB%A3%E7%A0%81/">
+          <span class="left arrow-icon flex-center">
+            <i class="fas fa-chevron-left"></i>
+          </span>
+          <span class="title flex-center">
+            <span class="post-nav-title-item">中文代码</span>
+            <span class="post-nav-item">上一篇</span>
+          </span>
+        </a>
+      </div>
+      
+      
+      <div class="article-next">
+        <a class="next" rel="next" href="/2022/09/05/2022-9-5/">
+          <span class="title flex-center">
+            <span class="post-nav-title-item">2022/9/5</span>
+            <span class="post-nav-item">下一篇</span>
+          </span>
+          <span class="right arrow-icon flex-center">
+            <i class="fas fa-chevron-right"></i>
+          </span>
+        </a>
+      </div>
+      
+    </div>
+    
+
+    
+    <div class="comment-container">
+      <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+<div class="valine-container">
+  <script data-pjax
+    src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+  <div id="vcomments"></div>
+  <script data-pjax>
+    function loadValine() {
+      new Valine({
+        el: '#vcomments',
+        appId: 'feCA8kB2qG5KbTeBkkXvzI2a-gzGzoHsz',
+        appKey: '3u4rs0paItSxjOGrBJq8DCKP',
+        meta: ['nick', 'mail', 'link'],
+        avatar: 'wavatar',
+        enableQQ: true,
+        placeholder: '😜 尽情吐槽吧~',
+        lang: 'zh-CN'.toLowerCase()
+      });
+
+      function getAuthor(language) {
+        switch (language) {
+          case 'en':
+            return 'Author';
+          case 'zh-CN':
+            return '博主';
+          default:
+            return 'Master';
+        }
+      }
+
+      // Add "Author" identify
+      const getValineDomTimer = setInterval(() => {
+        const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+        if (vcards.length > 0) {
+          let author = 'sonder';
+
+          if (author) {
+            for (let vcard of vcards) {
+              const vnick_dom = vcard.querySelector('.vhead .vnick');
+              const vnick = vnick_dom.innerHTML;
+              if (vnick === author) {
+                vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+              }
+            }
+          }
+          clearInterval(getValineDomTimer);
+        } else {
+          clearInterval(getValineDomTimer);
+        }
+      }, 2000);
+    }
+
+    if ('true') {
+      const loadValineTimeout = setTimeout(() => {
+        loadValine();
+        clearTimeout(loadValineTimeout);
+      }, 1000);
+    } else {
+      window.addEventListener('DOMContentLoaded', loadValine);
+    }
+
+  </script>
+</div>
+
+
+
+        
+    
+</div>
+
+    </div>
+    
+  </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+  <div class="info-container">
+    <div class="copyright-info info-item">
+      &copy;
+      
+      <span>2018</span>
+      -
+      
+      2024&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a
+        href="/">sonder</a>
+    </div>
+    
+    <script async data-pjax
+      src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <div class="website-count info-item">
+      
+      <span id="busuanzi_container_site_uv">
+        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+      </span>
+      
+      
+      <span id="busuanzi_container_site_pv">
+        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+      </span>
+      
+    </div>
+    
+    <div class="theme-info info-item">
+      由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a
+        class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">版本
+        v3.4.5</a>
+    </div>
+    
+    
+  </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+            <li class="tools-item rss flex-center">
+                <a class="flex-center"
+                   href="/atom.xml"
+                   target="_blank"
+                >
+                    <i class="fas fa-rss"></i>
+                </a>
+            </li>
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%9E%8D%E4%BA%91-im-%E9%9B%86%E6%88%90"><span class="nav-number">1.</span> <span class="nav-text"> 融云 IM 集成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%9B%86%E6%88%90"><span class="nav-number">2.</span> <span class="nav-text"> 客户端集成</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%BC%E5%85%A5-sdk"><span class="nav-number">2.1.</span> <span class="nav-text"> 导入 SDK</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">2.2.</span> <span class="nav-text"> 初始化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E8%BF%9E%E6%8E%A5-im"><span class="nav-number">2.3.</span> <span class="nav-text"> 用户连接 IM</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%91%E9%80%81%E6%B6%88%E6%81%AF"><span class="nav-number">2.4.</span> <span class="nav-text"> 发送消息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B6%88%E6%81%AF"><span class="nav-number">2.5.</span> <span class="nav-text"> 自定义消息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%A8%E6%83%85%E5%8A%A0%E8%BD%BD"><span class="nav-number">2.6.</span> <span class="nav-text"> 表情加载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E8%AF%AD%E9%9F%B3%E8%A7%86%E9%A2%91%E9%80%9A%E8%AF%9D"><span class="nav-number">2.7.</span> <span class="nav-text"> 关于语音&#x2F;视频通话</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B1%95%E7%A4%BA%E5%AF%B9%E8%AF%9D%E6%A1%86"><span class="nav-number">2.8.</span> <span class="nav-text"> 展示对话框</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%93%E8%AF%AD"><span class="nav-number">3.</span> <span class="nav-text"> 结语</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/code-copy.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/lazyload.js"></script>
+
+
+<div class="post-scripts pjax">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script>
+    
+</div>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/pjax.min.js"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    window.pjax = new Pjax({
+      selectors: [
+        'head title',
+        '.page-container',
+        '.pjax'
+      ],
+      history: true,
+      debug: false,
+      cacheBust: false,
+      timeout: 0,
+      analytics: false,
+      currentUrlFullReload: false,
+      scrollRestoration: false,
+      // scrollTo: true,
+    });
+
+    document.addEventListener('pjax:send', () => {
+      KEEP.utils.pjaxProgressBarStart();
+    });
+
+    document.addEventListener('pjax:complete', () => {
+      KEEP.utils.pjaxProgressBarEnd();
+      window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+      KEEP.refresh();
+    });
+  });
+
+</script>
+
+<script src="//cdn.jsdelivr.net/gh/sonderss/cdnStatic/confetti.browser.min.js"></script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
+<script script src="//cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js">
+</script>
+<script>
+  var defaults = {
+    startVelocity: 30,
+    spread: 360,
+    ticks: 60,
+    zIndex: 0,
+  };
+  var duration = 3 * 1000;
+  var animationEnd = Date.now() + duration;
+
+  function randomInRange(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+  const interval = setInterval(function () {
+    var timeLeft = animationEnd - Date.now();
+
+    if (timeLeft <= 0) {
+      return clearInterval(interval);
+    }
+
+    var particleCount = 50 * (timeLeft / duration);
+
+    confetti(
+      Object.assign({}, defaults, {
+        particleCount,
+        origin: {
+          x: randomInRange(0.1, 0.3),
+          y: Math.random() - 0.2,
+        },
+      }),
+    );
+    confetti(
+      Object.assign({}, defaults, {
+        particleCount,
+        origin: {
+          x: randomInRange(0.7, 0.9),
+          y: Math.random() - 0.2,
+        },
+      }),
+    );
+  }, 300);
+
+</script>
+
+
+
+</body>
+</html>

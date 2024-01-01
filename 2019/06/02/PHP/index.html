@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="keywords" content="sonder个人博客, sonder, sonders, 曹">
+  <meta name="description" content="sonder个人博客">
+  <meta name="author" content="sonder">
+  <link href="https://cdn.bootcss.com/KaTeX/0.7.1/katex.min.css" rel="stylesheet">
+
+  
+  <title>
+    
+    PHP |
+    
+    Sonder
+  </title>
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <link rel="shortcut icon" href="https://mp-8461e617-a7bd-46e2-9cfc-31a93d116962.cdn.bspapp.com/cloudstorage/ae7548cb-db9c-4e3c-be8f-e9e5d99ec2db.png">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css">
+  <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"sonderss.github.io","root":"/","language":"zh-CN","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#42b983","avatar":"https://mp-8461e617-a7bd-46e2-9cfc-31a93d116962.cdn.bspapp.com/cloudstorage/ae7548cb-db9c-4e3c-be8f-e9e5d99ec2db.png","favicon":"https://mp-8461e617-a7bd-46e2-9cfc-31a93d116962.cdn.bspapp.com/cloudstorage/ae7548cb-db9c-4e3c-be8f-e9e5d99ec2db.png","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"放弃幻想，轻装前行"},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="sonders" type="application/atom+xml">
+</head>
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Sonder
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/gallery"
+                            >
+                                相册
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/gallery">相册</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+  <div class="article-content-container">
+
+    <div class="article-title">
+      <span class="title-hover-animation">PHP</span>
+    </div>
+    
+    <div class="article-header">
+      <div class="avatar">
+        <img src="https://mp-8461e617-a7bd-46e2-9cfc-31a93d116962.cdn.bspapp.com/cloudstorage/ae7548cb-db9c-4e3c-be8f-e9e5d99ec2db.png">
+      </div>
+      <div class="info">
+        <div class="author">
+          <span class="name">sonder</span>
+
+          
+          <!-- 改动 -->
+          
+          
+          <span
+            class="author-label">超大杯</span>
+          
+          <!-- 改动 -->
+          
+        </div>
+
+        <div class="meta-info">
+          <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2019-06-02 08:49:25</span>
+        <span class="mobile">2019-06-02 08:49</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E5%AD%A6%E4%B9%A0/">学习</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>740 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>3 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+        </div>
+      </div>
+    </div>
+    
+
+
+    <!-- 
+    <div class="article-header">
+      <div class="avatar">
+        <img src="https://mp-8461e617-a7bd-46e2-9cfc-31a93d116962.cdn.bspapp.com/cloudstorage/ae7548cb-db9c-4e3c-be8f-e9e5d99ec2db.png">
+      </div>
+      <div class="info">
+        <div class="author">
+          <span class="name">sonder</span>
+          
+          <span
+            class="author-label"></span>
+          
+        </div>
+        <div class="meta-info">
+          <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2019-06-02 08:49:25</span>
+        <span class="mobile">2019-06-02 08:49</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E5%AD%A6%E4%B9%A0/">学习</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>740 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>3 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+        </div>
+      </div>
+    </div>
+     -->
+
+    <div class="article-content markdown-body">
+      <h4 id="环境安装"><a class="markdownIt-Anchor" href="#环境安装"></a> 环境安装：</h4>
+<p>PHP : 运行环境的安装，注意运行环境的路径修改问题。与自己的文件保持一致。</p>
+<ol>
+<li>目前我们的计算机中有两个web服务器，一个是Hbuilder自带的web服务，一个wamp中的apache<br />
+其中自带的web服务访问的地址：127.0.0.1:8020,wamp提供的web服务地址：localhost(127.0.0.1)</li>
+<li>自带的web服务不具有解析php的能力</li>
+</ol>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> </span><br><span class="line"><span class="comment">/**php语句写在&lt;?php ?&gt;里面，外面也可以写HTML语句和js等语句，但是要用相应的标签括起来。//当然HTML中也可以嵌入HTML页面内。*/</span></span><br><span class="line"><span class="comment">//分界符</span></span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;aa&quot;</span>;<span class="comment">//echo 输出语句</span></span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;&lt;h1&gt;这是一个标题&lt;/h1&gt;&quot;</span>;<span class="comment">//php里面可以嵌入HTML语句</span></span><br><span class="line"><span class="comment">//定界符</span></span><br><span class="line"><span class="comment">/**/</span></span><br><span class="line"><span class="variable">$str</span> = <span class="string">&lt;&lt;&lt;EOD</span></span><br><span class="line"><span class="string">&lt;h1&gt;这是一个标题&lt;/h1&gt;</span></span><br><span class="line"><span class="string">&lt;p&gt;这是有一个段落&lt;/p&gt;</span></span><br><span class="line"><span class="string">EOD</span>;</span><br><span class="line"><span class="keyword">echo</span> <span class="variable">$str</span>;</span><br><span class="line"><span class="keyword">isset</span>(<span class="variable">$a</span>) <span class="comment">// 判断一个变量是否定义；</span></span><br><span class="line"><span class="title function_ invoke__">json_encode</span>(<span class="variable">$val</span>) <span class="comment">// 用于对变量进行 JSON 编码，该函数如果执行成功返回 JSON 数据，</span></span><br><span class="line"><span class="comment">// 否则返回 FALSE。 </span></span><br><span class="line"><span class="title function_ invoke__">json_encode</span>(<span class="variable">$students</span>,JSON_UNESCAPED_UNICODE)；</span><br><span class="line"><span class="title function_ invoke__">json_decode</span>(<span class="variable">$val</span>,<span class="literal">true</span>) <span class="comment">//函数用于对 JSON 格式的字符串进行解码，并转换为 PHP 变量。</span></span><br><span class="line"><span class="comment">// True表示转换成数组，false转换成对象。</span></span><br></pre></td></tr></table></figure>
+<p>MySQL基础，图形化数据库创建，用PHP创建数据库，以及用PHP连接数据库和对数据进行增删改查操作。<br />
+将excel表格导入数据库需要改后缀名为.svc；</p>
+<h4 id="数组方法"><a class="markdownIt-Anchor" href="#数组方法"></a> 数组方法：</h4>
+<ol>
+<li>in_array(<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>v</mi><mi>a</mi><mi>l</mi><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">val,</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="mord mathit">a</span><span class="mord mathit" style="margin-right:0.01968em;">l</span><span class="mpunct">,</span></span></span></span>arr)  判断数组中是否包含某个值，返回布尔值；</li>
+<li>取得键名和键值 array_keys(arr)       array_values(arr)；</li>
+<li>移除数组中重复的值,返回去重之后的数组 array_unique($arr)；</li>
+<li>list(<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">a,</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit">a</span><span class="mpunct">,</span></span></span></span>b) = $arr;把数组中的值赋给指定的变量；</li>
+<li>foreach($arr as $val) 遍历数组；</li>
+<li>计算数组的长度 count($arr)；</li>
+<li>添加删除 array_push(<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mi>r</mi><mi>r</mi><mo separator="true">,</mo><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo>)</mo><mi>a</mi><mi>r</mi><mi>r</mi><mi>a</mi><msub><mi>y</mi><mi>p</mi></msub><mi>o</mi><mi>p</mi><mo>(</mo></mrow><annotation encoding="application/x-tex">arr,1,2)   array_pop(</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1.036108em;vertical-align:-0.286108em;"></span><span class="base textstyle uncramped"><span class="mord mathit">a</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mpunct">,</span><span class="mord mathrm">1</span><span class="mpunct">,</span><span class="mord mathrm">2</span><span class="mclose">)</span><span class="mord mathit">a</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mord mathit">a</span><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.03588em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">p</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mord mathit">o</span><span class="mord mathit">p</span><span class="mopen">(</span></span></span></span>arr)；</li>
+<li>统计数组中所有的值出现的次数array_count_values($arr)；mysqli_query()用于查询数据库，select_DB()用于选择数据库；</li>
+</ol>
+<h4 id="数组的创建"><a class="markdownIt-Anchor" href="#数组的创建"></a> 数组的创建：</h4>
+<ol>
+<li>不带索引的数组；</li>
+<li>带索引的数组；</li>
+<li>二维数组；</li>
+<li>使用变量创建数组<code>compact()  $a = “aaa”;$b = “bbb”; $c=array(1,2);  compact(“a”,”b”,”c”) “a”,”b”,”c”在结果中对应key值</code>；</li>
+<li>使用两个数组创建一个数组  <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo>=</mo><mi>a</mi><mi>r</mi><mi>r</mi><mi>a</mi><mi>y</mi><mo>(</mo><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mn>3</mn><mo>)</mo><mo separator="true">;</mo></mrow><annotation encoding="application/x-tex">a=array(1,2,3);</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit">a</span><span class="mrel">=</span><span class="mord mathit">a</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mord mathit">a</span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mopen">(</span><span class="mord mathrm">1</span><span class="mpunct">,</span><span class="mord mathrm">2</span><span class="mpunct">,</span><span class="mord mathrm">3</span><span class="mclose">)</span><span class="mpunct">;</span></span></span></span>b=array(“a”,”b”,”c”); array_combine(<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">a,</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit">a</span><span class="mpunct">,</span></span></span></span>b)，a的值为key，b的值为value；</li>
+<li>建立指定范围单元的数组range(start,end,step)；</li>
+</ol>
+<h4 id="预定义变量"><a class="markdownIt-Anchor" href="#预定义变量"></a> 预定义变量：</h4>
+<ol>
+<li>服务器变量$_SERVER,保存头信息，路径，脚本位置等的数组</li>
+<li>Cookie变量$_COOKIE，保存cookie值的数组</li>
+<li>HTTP GET变量$_GET，保存url请求和表单get提交的变量的数组</li>
+<li>HTTP POST变量$_POST，保存post方法生成的变量的数组</li>
+<li>Request变量$_REQUEST；</li>
+</ol>
+<h4 id="数据类型"><a class="markdownIt-Anchor" href="#数据类型"></a> 数据类型：</h4>
+<ol>
+<li>布尔值（true TRUE var_dump()）</li>
+<li>整型（integer）</li>
+<li>浮点型（float）</li>
+<li>字符串（string）</li>
+<li>数组（array）</li>
+<li>对象（object）</li>
+</ol>
+
+    </div>
+
+    
+    <div class="post-copyright-info">
+      <div class="article-copyright-info-container">
+  <!--  style="background-color: hexo-config('style.primary_color');" -->
+  <ul>
+    <li>本文标题：PHP</li>
+    <li>本文作者：sonder</li>
+    <li>创建时间：2019-06-02 08:49:25</li>
+    <li>
+      本文链接：https://sonderss.github.io/2019/06/02/PHP/
+    </li>
+    <!-- 版权声明：本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！ -->
+    <!-- <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li> -->
+  </ul>
+</div>
+
+    </div>
+    
+
+    
+    <ul class="post-tags-box">
+      
+      <li class="tag-item">
+        <a href="/tags/%E5%AD%A6%E4%B9%A0/">#学习</a>&nbsp;
+      </li>
+      
+    </ul>
+    
+
+    
+    <div class="article-nav">
+      
+      <div class="article-prev">
+        <a class="prev" rel="prev" href="/2019/06/18/gulp/">
+          <span class="left arrow-icon flex-center">
+            <i class="fas fa-chevron-left"></i>
+          </span>
+          <span class="title flex-center">
+            <span class="post-nav-title-item">gulp</span>
+            <span class="post-nav-item">上一篇</span>
+          </span>
+        </a>
+      </div>
+      
+      
+      <div class="article-next">
+        <a class="next" rel="next" href="/2019/05/27/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">
+          <span class="title flex-center">
+            <span class="post-nav-title-item">面向对象</span>
+            <span class="post-nav-item">下一篇</span>
+          </span>
+          <span class="right arrow-icon flex-center">
+            <i class="fas fa-chevron-right"></i>
+          </span>
+        </a>
+      </div>
+      
+    </div>
+    
+
+    
+    <div class="comment-container">
+      <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+<div class="valine-container">
+  <script data-pjax
+    src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+  <div id="vcomments"></div>
+  <script data-pjax>
+    function loadValine() {
+      new Valine({
+        el: '#vcomments',
+        appId: 'feCA8kB2qG5KbTeBkkXvzI2a-gzGzoHsz',
+        appKey: '3u4rs0paItSxjOGrBJq8DCKP',
+        meta: ['nick', 'mail', 'link'],
+        avatar: 'wavatar',
+        enableQQ: true,
+        placeholder: '😜 尽情吐槽吧~',
+        lang: 'zh-CN'.toLowerCase()
+      });
+
+      function getAuthor(language) {
+        switch (language) {
+          case 'en':
+            return 'Author';
+          case 'zh-CN':
+            return '博主';
+          default:
+            return 'Master';
+        }
+      }
+
+      // Add "Author" identify
+      const getValineDomTimer = setInterval(() => {
+        const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+        if (vcards.length > 0) {
+          let author = 'sonder';
+
+          if (author) {
+            for (let vcard of vcards) {
+              const vnick_dom = vcard.querySelector('.vhead .vnick');
+              const vnick = vnick_dom.innerHTML;
+              if (vnick === author) {
+                vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+              }
+            }
+          }
+          clearInterval(getValineDomTimer);
+        } else {
+          clearInterval(getValineDomTimer);
+        }
+      }, 2000);
+    }
+
+    if ('true') {
+      const loadValineTimeout = setTimeout(() => {
+        loadValine();
+        clearTimeout(loadValineTimeout);
+      }, 1000);
+    } else {
+      window.addEventListener('DOMContentLoaded', loadValine);
+    }
+
+  </script>
+</div>
+
+
+
+        
+    
+</div>
+
+    </div>
+    
+  </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+  <div class="info-container">
+    <div class="copyright-info info-item">
+      &copy;
+      
+      <span>2018</span>
+      -
+      
+      2024&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a
+        href="/">sonder</a>
+    </div>
+    
+    <script async data-pjax
+      src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <div class="website-count info-item">
+      
+      <span id="busuanzi_container_site_uv">
+        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+      </span>
+      
+      
+      <span id="busuanzi_container_site_pv">
+        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+      </span>
+      
+    </div>
+    
+    <div class="theme-info info-item">
+      由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a
+        class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">版本
+        v3.4.5</a>
+    </div>
+    
+    
+  </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+            <li class="tools-item rss flex-center">
+                <a class="flex-center"
+                   href="/atom.xml"
+                   target="_blank"
+                >
+                    <i class="fas fa-rss"></i>
+                </a>
+            </li>
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85"><span class="nav-number">1.</span> <span class="nav-text"> 环境安装：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text"> 数组方法：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E5%88%9B%E5%BB%BA"><span class="nav-number">3.</span> <span class="nav-text"> 数组的创建：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A2%84%E5%AE%9A%E4%B9%89%E5%8F%98%E9%87%8F"><span class="nav-number">4.</span> <span class="nav-text"> 预定义变量：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">5.</span> <span class="nav-text"> 数据类型：</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/code-copy.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/lazyload.js"></script>
+
+
+<div class="post-scripts pjax">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script>
+    
+</div>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/pjax.min.js"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    window.pjax = new Pjax({
+      selectors: [
+        'head title',
+        '.page-container',
+        '.pjax'
+      ],
+      history: true,
+      debug: false,
+      cacheBust: false,
+      timeout: 0,
+      analytics: false,
+      currentUrlFullReload: false,
+      scrollRestoration: false,
+      // scrollTo: true,
+    });
+
+    document.addEventListener('pjax:send', () => {
+      KEEP.utils.pjaxProgressBarStart();
+    });
+
+    document.addEventListener('pjax:complete', () => {
+      KEEP.utils.pjaxProgressBarEnd();
+      window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+      KEEP.refresh();
+    });
+  });
+
+</script>
+
+<script src="//cdn.jsdelivr.net/gh/sonderss/cdnStatic/confetti.browser.min.js"></script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
+<script script src="//cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js">
+</script>
+<script>
+  var defaults = {
+    startVelocity: 30,
+    spread: 360,
+    ticks: 60,
+    zIndex: 0,
+  };
+  var duration = 3 * 1000;
+  var animationEnd = Date.now() + duration;
+
+  function randomInRange(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+  const interval = setInterval(function () {
+    var timeLeft = animationEnd - Date.now();
+
+    if (timeLeft <= 0) {
+      return clearInterval(interval);
+    }
+
+    var particleCount = 50 * (timeLeft / duration);
+
+    confetti(
+      Object.assign({}, defaults, {
+        particleCount,
+        origin: {
+          x: randomInRange(0.1, 0.3),
+          y: Math.random() - 0.2,
+        },
+      }),
+    );
+    confetti(
+      Object.assign({}, defaults, {
+        particleCount,
+        origin: {
+          x: randomInRange(0.7, 0.9),
+          y: Math.random() - 0.2,
+        },
+      }),
+    );
+  }, 300);
+
+</script>
+
+
+
+</body>
+</html>
