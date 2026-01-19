@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="keywords" content="sonder个人博客, sonder, sonders, 曹">
+  <meta name="description" content="sonder个人博客">
+  <meta name="author" content="sonder">
+  <link href="https://cdn.bootcss.com/KaTeX/0.7.1/katex.min.css" rel="stylesheet">
+
+  
+  <title>
+    
+    gulp |
+    
+    Sonder
+  </title>
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <link rel="shortcut icon" href="http://cdn.statically.io/gh/sonderss/image-hosting@master/20220908/touxiang.6duqfq3j3e00.webp">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css">
+  <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"sonderss.github.io","root":"/","language":"zh-CN","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#42b983","avatar":"http://cdn.statically.io/gh/sonderss/image-hosting@master/20220908/touxiang.6duqfq3j3e00.webp","favicon":"http://cdn.statically.io/gh/sonderss/image-hosting@master/20220908/touxiang.6duqfq3j3e00.webp","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"放弃幻想，轻装前行"},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="sonders" type="application/atom+xml">
+</head>
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Sonder
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/gallery"
+                            >
+                                相册
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/gallery">相册</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+  <div class="article-content-container">
+
+    <div class="article-title">
+      <span class="title-hover-animation">gulp</span>
+    </div>
+    
+    <div class="article-header">
+      <div class="avatar">
+        <img src="http://cdn.statically.io/gh/sonderss/image-hosting@master/20220908/touxiang.6duqfq3j3e00.webp">
+      </div>
+      <div class="info">
+        <div class="author">
+          <span class="name">sonder</span>
+
+          
+          <!-- 改动 -->
+          
+          
+          <span
+            class="author-label">超大杯</span>
+          
+          <!-- 改动 -->
+          
+        </div>
+
+        <div class="meta-info">
+          <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2019-06-18 16:38:09</span>
+        <span class="mobile">2019-06-18 16:38</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E5%AD%A6%E4%B9%A0/">学习</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>1.5k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>6 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+        </div>
+      </div>
+    </div>
+    
+
+
+    <!-- 
+    <div class="article-header">
+      <div class="avatar">
+        <img src="http://cdn.statically.io/gh/sonderss/image-hosting@master/20220908/touxiang.6duqfq3j3e00.webp">
+      </div>
+      <div class="info">
+        <div class="author">
+          <span class="name">sonder</span>
+          
+          <span
+            class="author-label"></span>
+          
+        </div>
+        <div class="meta-info">
+          <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2019-06-18 16:38:09</span>
+        <span class="mobile">2019-06-18 16:38</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E5%AD%A6%E4%B9%A0/">学习</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>1.5k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>6 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+        </div>
+      </div>
+    </div>
+     -->
+
+    <div class="article-content markdown-body">
+      <h5 id="安装"><a class="markdownIt-Anchor" href="#安装"></a> 安装</h5>
+<p>安装gulp:前提先安装node.js环境然后在进行如下安装<br />
+<code>npm install gulp -g</code> 全局安装<br />
+<code>npm install gulp --save-dev</code> 安装依赖</p>
+<hr />
+<h5 id="初始化工程"><a class="markdownIt-Anchor" href="#初始化工程"></a> 初始化工程：</h5>
+<ol>
+<li>新建文件夹
+<ol>
+<li>mkdir 文件夹名称</li>
+<li>cd 命令进入工程文件夹下</li>
+<li>创建package.json文件</li>
+<li>手动创建或者命令创建</li>
+<li>npm init输入相关信息<br />
+然后发现没有gulp 这个时候就需要输入<br />
+<code>npm install gulp --save-dev</code> 然后出现一个node_modules/ 文件夹</li>
+</ol>
+</li>
+<li>有配置文件的话 直接输入npm install就可以了</li>
+</ol>
+<hr />
+<h5 id="创建任务"><a class="markdownIt-Anchor" href="#创建任务"></a> 创建任务</h5>
+<p>在根目录下创建一个文件  gulpfile.js<br />
+<code>var gulp = require(&quot;gulp&quot;);</code> // 引入<br />
+<code>gulp.task(&quot;hello&quot;，function（） &#123; //第一个参数是任务名，第二个是执行的任务功能 &#125;)</code><br />
+写完之后，在文件所在目录打开cmd 输入<code>gulp hello</code>  //(文件名)</p>
+<hr />
+<p>gulp.task(“default”,function(){}) 有回调函数，但也可以定义数组<br />
+gulp.task(“default”,[‘hello’ , …]);数组里放任务名，这样在cmd里直接键入 gulp即可执行</p>
+<hr />
+<p><code>gulp.src()</code>可以找出将要处理的文件，然后<code>pipe()</code>去处理这些找到的文件。<code>pipe()</code>可以理解为管道，每个管道就可以指定它的功能，最后使用<code>gulp.dest()</code>来放到指定的地方</p>
+<hr />
+<h5 id="使用gulp来实现文件的copy"><a class="markdownIt-Anchor" href="#使用gulp来实现文件的copy"></a> 使用gulp来实现文件的copy</h5>
+<p>首先在我们工程目录下新建一个测试使用的index.html, 然后写入相应的内容<br />
+在我们的gulpfile.js文件中输入以下内容：<br />
+<code>var gulp = (&quot;gulp&quot;)</code><br />
+<code>gulp.task(&quot;copyHtml&quot;,function()&#123; gulp.src(&quot;index.html&quot;).pipe(gulp.dest(&quot;dist&quot;)); &#125;)</code><br />
+以上代码是首先引入gulp工具，创建任务，任务名是“copyHtml”,找到文件名，这个文件，名可以是这样&quot; *.html&quot;(所有.html的文件)，然后处理，复制到dist这个文件名下，如果没有则会生成一个“dist”的目录，一般这里时网站根目录，里面的文件不做修改，只在源码中做修改；<br />
+最后在环境中执行  gulp copyHtml就可以了  OR  gulp.task(“default”,[“copyHtml”]) ,然后直接 gulp；</p>
+<hr />
+<p>拷贝图片文件，从某一个工程下面拷贝图片到指定的地方，类似于上一个方法；</p>
+<hr />
+<p>两个文件夹同时拷贝到某一个文件夹下<br />
+<code>gulp.task(&quot;data&quot;, function()&#123;     gulp.src([&quot;js/*.js&quot; , &quot;json/*.json&quot;]).pipe(gulp.dest(&quot;dist/data&quot;)); &#125;)</code><br />
+将js文件下所有的js文件和json下的所有的json文件放到dist目录下的data文件里；</p>
+<hr />
+<p>另外 排除文件拷贝<br />
+gulp.task(‘data’,function(){<br />
+return    gulp.src([‘xml/<em>.xml’,‘json/</em>.json’ ,  ‘!json/b.json’ ]).pipe(gulp.dest(‘dist/ data’));<br />
+})<br />
+!json/b.json排除某个文件</p>
+<hr />
+<h5 id="多个任务执行"><a class="markdownIt-Anchor" href="#多个任务执行"></a> 多个任务执行</h5>
+<p><code>gulp.task(&quot;build&quot; , [&quot;hello&quot;,&quot;copyHtml&quot;,&quot;data&quot;])</code></p>
+<p>在中括号后也可加上回调函数，例如function（）{ console.log(“编译成功”)}；</p>
+<hr />
+<h5 id="侦测文件变化-实时更新"><a class="markdownIt-Anchor" href="#侦测文件变化-实时更新"></a> 侦测文件变化 实时更新</h5>
+<p><code>gulp.task(&quot;watch&quot;,function()&#123;     gulp.watch(&quot;index.html&quot;,[&quot;copyHtml&quot;]);     gulp.watch(&quot;imags/**/*.&#123;jpg,png&#125;&quot;,&quot;[imags]&quot;) &#125;)</code><br />
+解读：使用此方法名 gulp.watch（“index.html”，[“copyHtml”]），第一个参数是文件，第一个参数是任务名  将此任务放到“default”，实时侦测 更新</p>
+<hr />
+<p>Gulp插件 :  访问网站 <a class="link"   target="_blank" rel="noopener" href="http://gulpjs.com/plugins" >http://gulpjs.com/plugins<i class="fas fa-external-link-alt"></i></a><br />
+如果npm安装失败 可尝试cnpm进行安装  =&gt; 淘宝镜像：（npm install -g cnpm --registry=<a class="link"   target="_blank" rel="noopener" href="https://registry.npm.taobao.org" >https://registry.npm.taobao.org<i class="fas fa-external-link-alt"></i></a>）;<br />
+gulp sass ：命令行安装依赖  npm install gulp-sass --save-dev<br />
+安装好插件后，首先引入  const  sass = require(“gulp-sass”);<br />
+gulp.task(“sass”,function(){<br />
+gulp.src(“test.scss”)  //找到文件<br />
+.pipe(sourcemaps.init())<br />
+.pipe(sass({outputStyle:“compressed”}))  //压缩格式<br />
+.pipe(sourcemaps.write())<br />
+.pipe(gulp.dest(“dist/css”));<br />
+})<br />
+解读： 创建任务，先找到scss文件，执行sass()方法转换成css文件，再拷贝给dist下css文件名里；<br />
+其中  sourcemaps.init()      sourcemaps.write() ； 是为了在实际开发中，将浏览器里的样式变为scss文件，这样只要在scss里开发代码就行了，将sass功能 写在“default”里，这样实时更新css里代码      当然，要先安装gulp-sourcemaps 然后引入</p>
+<hr />
+<h5 id="gulpconnect-搭建本地服务"><a class="markdownIt-Anchor" href="#gulpconnect-搭建本地服务"></a> gulp.connect 搭建本地服务</h5>
+<p>安装<code>gulp.connect :  npm install gulp-connect  --save-dev</code><br />
+然后引入  <code>const connect = require(&quot;gulp-connect&quot;);</code><br />
+创建一个任务：<br />
+<code>gulp.task(&quot;server&quot; , function()&#123;  connect.server(&#123; root : &quot;dist&quot; ,  // 网站根目录 livereload : true &#125;) &#125;)</code><br />
+安装好，写以上代码，将此任务，写到 “default”默认里  时刻监听；</p>
+<p>修改文件后页面自动刷新<br />
+注意：实时监听，文件内容的变化，从而根目录下的copy文件也实时更新，但是页面实时更新是要在最后加入<br />
+<code>pipe(connect.reload())</code><br />
+这个方法加在需要改变的任务里，比如所有的html文件，比如所有的css文件，比如所有的js文件</p>
+<hr />
+<h5 id="合并文件插件gulp-concat"><a class="markdownIt-Anchor" href="#合并文件插件gulp-concat"></a> 合并文件插件gulp-concat:</h5>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 命令行安装 npm install gulp-concat --save-dev </span></span><br><span class="line"><span class="comment">// 在gulpfile.js 中写入：</span></span><br><span class="line"><span class="keyword">var</span> concat = <span class="built_in">require</span>(<span class="string">&#x27;gulp-concat&#x27;</span>); </span><br><span class="line">gulp.<span class="title function_">task</span>(<span class="string">&#x27;concat&#x27;</span>,<span class="keyword">function</span>(<span class="params"></span>)&#123; </span><br><span class="line">	 gulp.<span class="title function_">src</span>([<span class="string">&#x27;js/a.js&#x27;</span>,<span class="string">&#x27;js/b.js&#x27;</span>])</span><br><span class="line">	.<span class="title function_">pipe</span>(<span class="title function_">concat</span>(<span class="string">&#x27;main.js&#x27;</span>))</span><br><span class="line">	.<span class="title function_">pipe</span>(gulp.<span class="title function_">dest</span>(<span class="string">&#x27;dist/js&#x27;</span>));</span><br><span class="line"> &#125;) </span><br></pre></td></tr></table></figure>
+<hr />
+<h5 id="将合并js文件进行压缩gulp-uglify"><a class="markdownIt-Anchor" href="#将合并js文件进行压缩gulp-uglify"></a> 将合并js文件进行压缩gulp-uglify</h5>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 命令行安装 npm install gulp-uglify --save-dev </span></span><br><span class="line"><span class="comment">// 在gulpfile.js 中</span></span><br><span class="line"><span class="keyword">var</span> uglify = <span class="built_in">require</span>(<span class="string">&#x27;gulp-uglify&#x27;</span>);</span><br><span class="line">gulp.<span class="title function_">task</span>(<span class="string">&#x27;uglify&#x27;</span>,<span class="keyword">function</span>(<span class="params"></span>)&#123; </span><br><span class="line">	 gulp.<span class="title function_">src</span>([<span class="string">&#x27;js/a.js&#x27;</span>,<span class="string">&#x27;js/b.js&#x27;</span>]) </span><br><span class="line">	.<span class="title function_">pipe</span>(<span class="title function_">concat</span>(<span class="string">&#x27;main.js&#x27;</span>)) </span><br><span class="line">	.<span class="title function_">pipe</span>(<span class="title function_">uglify</span>())</span><br><span class="line">	.<span class="title function_">pipe</span>(gulp.<span class="title function_">dest</span>(<span class="string">&#x27;dist/js&#x27;</span>)); </span><br><span class="line">&#125;) </span><br></pre></td></tr></table></figure>
+<hr />
+<h5 id="安装gulp-rename插件"><a class="markdownIt-Anchor" href="#安装gulp-rename插件"></a> 安装gulp-rename插件</h5>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">   <span class="comment">// 命令行安装 npm install gulp-rename --save-dev</span></span><br><span class="line">   <span class="keyword">var</span> rename = <span class="built_in">require</span>(<span class="string">&#x27;gulp-rename&#x27;</span>);</span><br><span class="line">   gulp.<span class="title function_">task</span>(<span class="string">&#x27;rename&#x27;</span>,<span class="keyword">function</span>(<span class="params"></span>)&#123; </span><br><span class="line">   <span class="keyword">return</span> gulp.<span class="title function_">src</span>([<span class="string">&#x27;js/a.js&#x27;</span>,<span class="string">&#x27;javascripts/b.js&#x27;</span>]) </span><br><span class="line">   .<span class="title function_">pipe</span>(<span class="title function_">concat</span>(<span class="string">&#x27;main.js&#x27;</span>)) </span><br><span class="line">   .<span class="title function_">pipe</span>(gulp.<span class="title function_">dest</span>(<span class="string">&#x27;dist/js&#x27;</span>)) </span><br><span class="line">   .<span class="title function_">pipe</span>(<span class="title function_">uglify</span>())</span><br><span class="line">   .<span class="title function_">pipe</span>(<span class="title function_">rename</span>(<span class="string">&#x27;main.min.js&#x27;</span>)) </span><br><span class="line">   .<span class="title function_">pipe</span>(gulp.<span class="title function_">dest</span>(<span class="string">&#x27;dist/js&#x27;</span>));</span><br><span class="line">&#125;) </span><br></pre></td></tr></table></figure>
+<hr />
+<h5 id="如何压缩css"><a class="markdownIt-Anchor" href="#如何压缩css"></a> 如何压缩css</h5>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">npm install gulp-sass --save-dev</span><br><span class="line"><span class="comment">// 命令行安装 </span></span><br><span class="line">npm install gulp-clean-css --save-dev</span><br><span class="line"><span class="keyword">var</span> cleanCss = <span class="built_in">require</span>(<span class="string">&#x27;gulp-clean-css&#x27;</span>); </span><br><span class="line">gulp.<span class="title function_">task</span>(<span class="string">&#x27;cleanCss&#x27;</span>,<span class="keyword">function</span>(<span class="params"></span>)&#123; </span><br><span class="line"><span class="keyword">return</span> gulp.<span class="title function_">src</span>(<span class="string">&#x27;stylesheet/**/*.scss&#x27;</span>) </span><br><span class="line"> .<span class="title function_">pipe</span>(<span class="title function_">sass</span>())</span><br><span class="line"> .<span class="title function_">pipe</span>(cleanCss ())</span><br><span class="line"> .<span class="title function_">pipe</span>(gulp.<span class="title function_">dest</span>(<span class="string">&#x27;dist/css&#x27;</span>));</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<hr />
+<h5 id="将es6转换成es5"><a class="markdownIt-Anchor" href="#将es6转换成es5"></a> 将ES6转换成ES5</h5>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">npm install babel-cli --save-dev  npm install babel-preset-es2015 --save-dev</span><br><span class="line">npm view *** versions</span><br><span class="line"><span class="comment">// 安装插件npm install  gulp-babel  --save-dev</span></span><br><span class="line">gulp.<span class="title function_">task</span>(<span class="string">&quot;babel&quot;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;  </span><br><span class="line">    <span class="keyword">return</span> gulp.<span class="title function_">src</span>(<span class="string">&quot;ES6.js&quot;</span>)  </span><br><span class="line">    .<span class="title function_">pipe</span>(<span class="title function_">babel</span>(&#123;“presets”:[“es2015”]&#125;))  </span><br><span class="line">    .<span class="title function_">pipe</span>(gulp.<span class="title function_">dest</span>(<span class="string">&quot;dist/js&quot;</span>));  </span><br><span class="line">&#125;); </span><br></pre></td></tr></table></figure>
+<hr />
+
+    </div>
+
+    
+    <div class="post-copyright-info">
+      <div class="article-copyright-info-container">
+  <!--  style="background-color: hexo-config('style.primary_color');" -->
+  <ul>
+    <li>本文标题：gulp</li>
+    <li>本文作者：sonder</li>
+    <li>创建时间：2019-06-18 16:38:09</li>
+    <li>
+      <!-- 本文链接：https://sonderss.github.io/2019/06/18/gulp/ -->
+    </li>
+    <!-- 版权声明：本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！ -->
+    <!-- <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li> -->
+  </ul>
+</div>
+
+    </div>
+    
+
+    
+    <ul class="post-tags-box">
+      
+      <li class="tag-item">
+        <a href="/tags/%E5%AD%A6%E4%B9%A0/">#学习</a>&nbsp;
+      </li>
+      
+    </ul>
+    
+
+    
+    <div class="article-nav">
+      
+      <div class="article-prev">
+        <a class="prev" rel="prev" href="/2019/06/18/nodeJs/">
+          <span class="left arrow-icon flex-center">
+            <i class="fas fa-chevron-left"></i>
+          </span>
+          <span class="title flex-center">
+            <span class="post-nav-title-item">nodeJs</span>
+            <span class="post-nav-item">上一篇</span>
+          </span>
+        </a>
+      </div>
+      
+      
+      <div class="article-next">
+        <a class="next" rel="next" href="/2019/06/02/PHP/">
+          <span class="title flex-center">
+            <span class="post-nav-title-item">PHP</span>
+            <span class="post-nav-item">下一篇</span>
+          </span>
+          <span class="right arrow-icon flex-center">
+            <i class="fas fa-chevron-right"></i>
+          </span>
+        </a>
+      </div>
+      
+    </div>
+    
+
+    
+  </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+  <div class="info-container">
+    <div class="copyright-info info-item">
+      &copy;
+      
+      <span>2018</span>
+      -
+      
+      2026&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a
+        href="/">sonder</a>
+    </div>
+    
+    <script async data-pjax
+      src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <div class="website-count info-item">
+      
+      <span id="busuanzi_container_site_uv">
+        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+      </span>
+      
+      
+      <span id="busuanzi_container_site_pv">
+        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+      </span>
+      
+    </div>
+    
+    <div class="theme-info info-item">
+      由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a
+        class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">版本
+        v3.4.5</a>
+    </div>
+    
+    
+  </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+            <li class="tools-item rss flex-center">
+                <a class="flex-center"
+                   href="/atom.xml"
+                   target="_blank"
+                >
+                    <i class="fas fa-rss"></i>
+                </a>
+            </li>
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">1.</span> <span class="nav-text"> 安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E5%B7%A5%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text"> 初始化工程：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E4%BB%BB%E5%8A%A1"><span class="nav-number">3.</span> <span class="nav-text"> 创建任务</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8gulp%E6%9D%A5%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E7%9A%84copy"><span class="nav-number">4.</span> <span class="nav-text"> 使用gulp来实现文件的copy</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%A4%9A%E4%B8%AA%E4%BB%BB%E5%8A%A1%E6%89%A7%E8%A1%8C"><span class="nav-number">5.</span> <span class="nav-text"> 多个任务执行</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BE%A6%E6%B5%8B%E6%96%87%E4%BB%B6%E5%8F%98%E5%8C%96-%E5%AE%9E%E6%97%B6%E6%9B%B4%E6%96%B0"><span class="nav-number">6.</span> <span class="nav-text"> 侦测文件变化 实时更新</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#gulpconnect-%E6%90%AD%E5%BB%BA%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1"><span class="nav-number">7.</span> <span class="nav-text"> gulp.connect 搭建本地服务</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%90%88%E5%B9%B6%E6%96%87%E4%BB%B6%E6%8F%92%E4%BB%B6gulp-concat"><span class="nav-number">8.</span> <span class="nav-text"> 合并文件插件gulp-concat:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B0%86%E5%90%88%E5%B9%B6js%E6%96%87%E4%BB%B6%E8%BF%9B%E8%A1%8C%E5%8E%8B%E7%BC%A9gulp-uglify"><span class="nav-number">9.</span> <span class="nav-text"> 将合并js文件进行压缩gulp-uglify</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AE%89%E8%A3%85gulp-rename%E6%8F%92%E4%BB%B6"><span class="nav-number">10.</span> <span class="nav-text"> 安装gulp-rename插件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%8E%8B%E7%BC%A9css"><span class="nav-number">11.</span> <span class="nav-text"> 如何压缩css</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B0%86es6%E8%BD%AC%E6%8D%A2%E6%88%90es5"><span class="nav-number">12.</span> <span class="nav-text"> 将ES6转换成ES5</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/code-copy.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/lazyload.js"></script>
+
+
+<div class="post-scripts pjax">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script>
+    
+</div>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/pjax.min.js"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    window.pjax = new Pjax({
+      selectors: [
+        'head title',
+        '.page-container',
+        '.pjax'
+      ],
+      history: true,
+      debug: false,
+      cacheBust: false,
+      timeout: 0,
+      analytics: false,
+      currentUrlFullReload: false,
+      scrollRestoration: false,
+      // scrollTo: true,
+    });
+
+    document.addEventListener('pjax:send', () => {
+      KEEP.utils.pjaxProgressBarStart();
+    });
+
+    document.addEventListener('pjax:complete', () => {
+      KEEP.utils.pjaxProgressBarEnd();
+      window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+      KEEP.refresh();
+    });
+  });
+
+</script>
+
+<script src="//cdn.jsdelivr.net/gh/sonderss/cdnStatic/confetti.browser.min.js"></script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
+<script script src="//cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js">
+</script>
+<script>
+  var defaults = {
+    startVelocity: 30,
+    spread: 360,
+    ticks: 60,
+    zIndex: 0,
+  };
+  var duration = 3 * 1000;
+  var animationEnd = Date.now() + duration;
+
+  function randomInRange(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+  const interval = setInterval(function () {
+    var timeLeft = animationEnd - Date.now();
+
+    if (timeLeft <= 0) {
+      return clearInterval(interval);
+    }
+
+    var particleCount = 50 * (timeLeft / duration);
+
+    confetti(
+      Object.assign({}, defaults, {
+        particleCount,
+        origin: {
+          x: randomInRange(0.1, 0.3),
+          y: Math.random() - 0.2,
+        },
+      }),
+    );
+    confetti(
+      Object.assign({}, defaults, {
+        particleCount,
+        origin: {
+          x: randomInRange(0.7, 0.9),
+          y: Math.random() - 0.2,
+        },
+      }),
+    );
+  }, 300);
+
+</script>
+
+
+
+</body>
+</html>
